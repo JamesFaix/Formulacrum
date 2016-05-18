@@ -157,5 +157,21 @@ namespace Formulacrum {
         /// <param name="outline">Has no effect for reference nodes.</param>
         /// <returns>Rendered formula.</returns>
         public override string Render(bool outline) => BookAndSheetPrefix + Coordinates;
+
+        /// <summary>
+        /// Sets the coordinate nodes of this instance to the given nodes, then returns this node.
+        /// </summary>
+        /// <param name="top">New top row node.</param>
+        /// <param name="left">New left column node.</param>
+        /// <param name="bottom">New bottom row node.</param>
+        /// <param name="right">New right column node.</param>
+        /// <returns>Reference to this node.</returns>
+        public ReferenceNode SetCoordinates(IntNode top, IntNode left, IntNode bottom, IntNode right) {
+            this.Top = top;
+            this.Right = right;
+            this.Left = left;
+            this.Bottom = bottom;
+            return this;
+        }
     }
 }

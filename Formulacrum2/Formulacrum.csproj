@@ -91,7 +91,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ExtensionMethods.cs" />
+    <Compile Include="Factories\FunctionNodeFactory.cs" />
+    <Compile Include="Factories\GroupNodeFactory.cs" />
+    <Compile Include="Factories\AbsoluteReferenceNodeFactory.cs" />
+    <Compile Include="Factories\OperatorNodeFactory.cs" />
+    <Compile Include="Factories\RelativeReferenceNodeFactory.cs" />
+    <Compile Include="Factories\LiteralNodeFactory.cs" />
     <Compile Include="GlobalSuppressions.cs" />
+    <Compile Include="Nodes\NodeExt.cs" />
     <Compile Include="Nodes\Group Nodes\FunctionNode.cs" />
     <Compile Include="Nodes\Group Nodes\GroupNode.cs" />
     <Compile Include="Nodes\IFormula.cs" />
@@ -110,9 +117,9 @@
     <Compile Include="Nodes\Reference Nodes\RelativeReferenceNode.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
-    <Content Include="Formulacrum2.cd" />
+    <None Include="Nodes\NodeComposition.cd" />
+    <None Include="Nodes\NodeInheritance.cd" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

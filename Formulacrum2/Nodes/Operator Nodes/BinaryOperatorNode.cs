@@ -49,7 +49,7 @@ namespace Formulacrum {
         /// <param name="arg1">First argument.</param>
         /// <param name="arg2">Second argument.</param>
         /// <returns>Reference to this node.</returns>
-        public BinaryOperatorNode SetArgs(Node arg1, Node arg2) {
+        public BinaryOperatorNode SetValues(Node arg1, Node arg2) {
             this[0] = arg1;
             this[1] = arg2;
             return this;

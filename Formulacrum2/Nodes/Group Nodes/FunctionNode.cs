@@ -20,5 +20,20 @@
         /// </summary>
         /// <returns>New node with identical properties to this instance, but with no child nodes assigned.</returns>
         public override Node Clone() => new FunctionNode(Name, MinCount, MaxCount).SetCount(Count);
+
+        /// <summary>
+        /// Clears child nodes and sets child node collection to given nodes, then returns this node.
+        /// </summary>
+        /// <param name="values">Nodes to assign.</param>
+        /// <returns>Reference to this node.</returns>
+        public new FunctionNode SetValues(params Node[] values) => base.SetValues(values) as FunctionNode;
+
+
+        /// <summary>
+        /// Clears child nodes and sets child node collection to give size, then returns this node.
+        /// </summary>
+        /// <param name="count">New size.</param>
+        /// <returns>Reference to this node.</returns>
+        public new FunctionNode SetCount(int count) => base.SetCount(count) as FunctionNode;
     }
 }

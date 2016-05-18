@@ -1,41 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <?xml-stylesheet type="text/xsl" href="c:\program files (x86)\microsoft visual studio 14.0\team tools\static analysis tools\fxcop\Xml\CodeAnalysisReport.xsl"?>
 <FxCopReport Version="14.0">
- <Namespaces>
-  <Namespace Name="Formulacrum">
-   <Messages>
-    <Message Id="Formulacrum" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Active" Created="2016-05-18 01:40:39Z" FixCategory="Breaking">
-     <Issue Name="Namespace" Certainty="75" Level="CriticalWarning">Correct the spelling of 'Formulacrum' in namespace name 'Formulacrum'.</Issue>
-    </Message>
-   </Messages>
-  </Namespace>
- </Namespaces>
- <Targets>
-  <Target Name="C:\Users\James\Documents\GitHub\Formulacrum\Formulacrum2\bin\Analysis\Formulacrum.dll">
-   <Modules>
-    <Module Name="formulacrum.dll">
-     <Messages>
-      <Message Id="Formulacrum" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Active" Created="2016-05-18 01:40:39Z" FixCategory="Breaking">
-       <Issue Name="Assembly" Certainty="75" Level="CriticalWarning">Correct the spelling of 'Formulacrum' in assembly name 'Formulacrum.dll'.</Issue>
-      </Message>
-     </Messages>
-    </Module>
-   </Modules>
-  </Target>
- </Targets>
- <Rules>
-  <Rule TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704">
-   <Name>Identifiers should be spelled correctly</Name>
-   <Description>The individual words that make up an identifier should not be abbreviated and should be spelled correctly. If this rule generates a false positive on a term that should be recognized, add the word to the FxCop custom dictionary.</Description>
-   <Resolution Name="Assembly">Correct the spelling of '{0}' in assembly name {1}.</Resolution>
-   <Resolution Name="Namespace">Correct the spelling of '{0}' in namespace name '{1}'.</Resolution>
-   <Owner />
-   <Url>http://msdn.microsoft.com/library/bb264492.aspx</Url>
-   <Email>[none]</Email>
-   <MessageLevel Certainty="75">CriticalWarning</MessageLevel>
-   <File Name="namingrules.dll" Version="14.0.0.0" />
-  </Rule>
- </Rules>
  <Localized>
   <String Key="Category">Category</String>
   <String Key="Certainty">Certainty</String>

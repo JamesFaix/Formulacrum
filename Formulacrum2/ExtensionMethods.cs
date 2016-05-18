@@ -34,5 +34,7 @@ namespace Formulacrum {
             if (delimiter == null) throw new ArgumentNullException(nameof(delimiter));
             return text.Split(new string[] { delimiter }, StringSplitOptions.None);
         }
+
+       
     }
 }

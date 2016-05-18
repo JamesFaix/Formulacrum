@@ -17,6 +17,439 @@
             <param name="delimiter">Delimiter.</param>
             <returns>String composed of each string of input collection, separated by a delimiter.</returns>
         </member>
+        <member name="T:Formulacrum.GroupNodeFactory">
+            <summary>
+            Factory for grouping formula nodes.
+            </summary>
+        </member>
+        <member name="M:Formulacrum.GroupNodeFactory.Group">
+            <summary>
+            Returns a group node for wrapping other nodes in parentheses.
+            </summary>
+            <returns>Group node for wrapping other nodes in parentheses.</returns>
+        </member>
+        <member name="M:Formulacrum.GroupNodeFactory.Group(Formulacrum.Node[])">
+            <summary>
+            Returns a group node wrapping the given nodes in parentheses.
+            </summary>
+            <param name="nodes">Nodes to group.</param>
+            <returns>Group node wrapping the given nodes in parentheses.</returns>
+        </member>
+        <member name="M:Formulacrum.GroupNodeFactory.Array">
+            <summary>
+            Returns a group node for wrapping other nodes in an array (with curly braces).
+            </summary>
+            <returns>Group node for wrapping other nodes in an array.</returns>
+        </member>
+        <member name="M:Formulacrum.GroupNodeFactory.Array(Formulacrum.Node[])">
+            <summary>
+            Returns a group node wrapping the given nodes in an array (with curly braces).
+            </summary>
+            <param name="nodes">Nodes to group.</param>
+            <returns>Group node wrapping the given nodes in an array.</returns>
+        </member>
+        <member name="T:Formulacrum.AbsoluteReferenceNodeFactory">
+            <summary>
+            Factory for absolute reference formula nodes.
+            </summary>
+        </member>
+        <member name="M:Formulacrum.AbsoluteReferenceNodeFactory.Empty">
+            <summary>
+            Returns absolute reference node with unassigned coordinates.
+            </summary>
+            <returns>New absolute reference node.</returns>
+        </member>
+        <member name="M:Formulacrum.AbsoluteReferenceNodeFactory.Cell(Formulacrum.IntNode,Formulacrum.IntNode)">
+            <summary>
+            Returns absolute reference node with coordinates for the cell at the given row and column.
+            </summary>
+            <param name="row">Row number.</param>
+            <param name="column">Column number.</param>
+            <returns>New absolute reference node.</returns>
+        </member>
+        <member name="M:Formulacrum.AbsoluteReferenceNodeFactory.Row(Formulacrum.IntNode)">
+            <summary>
+            Returns absolute reference node with coordinates for the row at the give index.
+            </summary>
+            <param name="index">Row number.</param>
+            <returns>New absolute reference node.</returns>
+        </member>
+        <member name="M:Formulacrum.AbsoluteReferenceNodeFactory.Rows(Formulacrum.IntNode,Formulacrum.IntNode)">
+            <summary>
+            Returns absolute reference node with coordinates for the span of rows between the two given indexes.
+            </summary>
+            <param name="top">First row.</param>
+            <param name="bottom">Last row.</param>
+            <returns>New absolute reference node.</returns>
+        </member>
+        <member name="M:Formulacrum.AbsoluteReferenceNodeFactory.Column(Formulacrum.IntNode)">
+            <summary>
+            Returns absolute reference node with coordinates for the column at the give index.
+            </summary>
+            <param name="index">Column number.</param>
+            <returns>New absolute reference node.</returns>
+        </member>
+        <member name="M:Formulacrum.AbsoluteReferenceNodeFactory.Columns(Formulacrum.IntNode,Formulacrum.IntNode)">
+            <summary>
+            Returns absolute reference node with coordinates for the span of columns between the two given indexes.
+            </summary>
+            <param name="left">First column.</param>
+            <param name="right">Last column.</param>
+            <returns>New absolute reference node.</returns>
+        </member>
+        <member name="M:Formulacrum.AbsoluteReferenceNodeFactory.Range(Formulacrum.IntNode,Formulacrum.IntNode,Formulacrum.IntNode,Formulacrum.IntNode)">
+            <summary>
+            Returns absolute reference node with the given coordinates.
+            </summary>
+            <param name="top">First row.</param>
+            <param name="left">First column.</param>
+            <param name="bottom">Last row.</param>
+            <param name="right">Last column.</param>
+            <returns>New absolute reference node.</returns>
+        </member>
+        <member name="T:Formulacrum.OperatorNodeFactory">
+            <summary>
+            Factory for operator formula nodes.
+            </summary>
+        </member>
+        <member name="M:Formulacrum.OperatorNodeFactory.EqualTo">
+            <summary>
+            Returns a binary operator node for equality comparison.
+            </summary>
+            <returns>New operator node.</returns>
+        </member>
+        <member name="M:Formulacrum.OperatorNodeFactory.EqualTo(Formulacrum.Node,Formulacrum.Node)">
+            <summary>
+            Returns a binary operator node for equality comparison, with the given arguments.
+            </summary>
+            <returns>New operator node.</returns>
+            <param name="arg1">First argument.</param>
+            <param name="arg2">Second argument.</param>
+        </member>
+        <member name="M:Formulacrum.OperatorNodeFactory.NotEqual">
+            <summary>
+            Returns a binary operator node for inequality comparison.
+            </summary>
+            <returns>New operator node.</returns>
+        </member>
+        <member name="M:Formulacrum.OperatorNodeFactory.NotEqual(Formulacrum.Node,Formulacrum.Node)">
+            <summary>
+            Returns a binary operator node for inequality comparison, with the given arguments.
+            </summary>
+            <returns>New operator node.</returns>
+            <param name="arg1">First argument.</param>
+            <param name="arg2">Second argument.</param>
+        </member>
+        <member name="M:Formulacrum.OperatorNodeFactory.LessThan">
+            <summary>
+            Returns a binary operator node for less-than comparison.
+            </summary>
+            <returns>New operator node.</returns>
+        </member>
+        <member name="M:Formulacrum.OperatorNodeFactory.LessThan(Formulacrum.Node,Formulacrum.Node)">
+            <summary>
+            Returns a binary operator node for less-than comparison, with the given arguments.
+            </summary>
+            <returns>New operator node.</returns>
+            <param name="arg1">First argument.</param>
+            <param name="arg2">Second argument.</param>
+        </member>
+        <member name="M:Formulacrum.OperatorNodeFactory.LessOrEqual">
+            <summary>
+            Returns a binary operator node for less-than-or-equal-to comparison.
+            </summary>
+            <returns>New operator node.</returns>
+        </member>
+        <member name="M:Formulacrum.OperatorNodeFactory.LessOrEqual(Formulacrum.Node,Formulacrum.Node)">
+            <summary>
+            Returns a binary operator node for less-than-or-equal-to comparison, with the given arguments.
+            </summary>
+            <returns>New operator node.</returns>
+            <param name="arg1">First argument.</param>
+            <param name="arg2">Second argument.</param>
+        </member>
+        <member name="M:Formulacrum.OperatorNodeFactory.GreaterThan">
+            <summary>
+            Returns a binary operator node for greater-than comparison.
+            </summary>
+            <returns>New operator node.</returns>
+        </member>
+        <member name="M:Formulacrum.OperatorNodeFactory.GreaterThan(Formulacrum.Node,Formulacrum.Node)">
+            <summary>
+            Returns a binary operator node for greater-than comparison, with the given arguments.
+            </summary>
+            <returns>New operator node.</returns>
+            <param name="arg1">First argument.</param>
+            <param name="arg2">Second argument.</param>
+        </member>
+        <member name="M:Formulacrum.OperatorNodeFactory.GreaterOrEqual">
+            <summary>
+            Returns a binary operator node for greater-than-or-equal-to comparison.
+            </summary>
+            <returns>New operator node.</returns>
+        </member>
+        <member name="M:Formulacrum.OperatorNodeFactory.GreaterOrEqual(Formulacrum.Node,Formulacrum.Node)">
+            <summary>
+            Returns a binary operator node for greater-than-or-equal-to comparison, with the given arguments.
+            </summary>
+            <returns>New operator node.</returns>
+            <param name="arg1">First argument.</param>
+            <param name="arg2">Second argument.</param>
+        </member>
+        <member name="M:Formulacrum.OperatorNodeFactory.Add">
+            <summary>
+            Returns a binary operator node for addition.
+            </summary>
+            <returns>New operator node.</returns>
+        </member>
+        <member name="M:Formulacrum.OperatorNodeFactory.Add(Formulacrum.Node,Formulacrum.Node)">
+            <summary>
+            Returns a binary operator node for addition, with the given arguments.
+            </summary>
+            <returns>New operator node.</returns>
+            <param name="arg1">First argument.</param>
+            <param name="arg2">Second argument.</param>
+        </member>
+        <member name="M:Formulacrum.OperatorNodeFactory.Subtract">
+            <summary>
+            Returns a binary operator node for subtraction.
+            </summary>
+            <returns>New operator node.</returns>
+        </member>
+        <member name="M:Formulacrum.OperatorNodeFactory.Subtract(Formulacrum.Node,Formulacrum.Node)">
+            <summary>
+            Returns a binary operator node for subtraction, with the given arguments.
+            </summary>
+            <returns>New operator node.</returns>
+            <param name="arg1">First argument.</param>
+            <param name="arg2">Second argument.</param>
+        </member>
+        <member name="M:Formulacrum.OperatorNodeFactory.Multiply">
+            <summary>
+            Returns a binary operator node for multiplication.
+            </summary>
+            <returns>New operator node.</returns>
+        </member>
+        <member name="M:Formulacrum.OperatorNodeFactory.Multiply(Formulacrum.Node,Formulacrum.Node)">
+            <summary>
+            Returns a binary operator node for multiplication, with the given arguments.
+            </summary>
+            <returns>New operator node.</returns>
+            <param name="arg1">First argument.</param>
+            <param name="arg2">Second argument.</param>
+        </member>
+        <member name="M:Formulacrum.OperatorNodeFactory.Divide">
+            <summary>
+            Returns a binary operator node for division.
+            </summary>
+            <returns>New operator node.</returns>
+        </member>
+        <member name="M:Formulacrum.OperatorNodeFactory.Divide(Formulacrum.Node,Formulacrum.Node)">
+            <summary>
+            Returns a binary operator node for division, with the given arguments.
+            </summary>
+            <returns>New operator node.</returns>
+            <param name="arg1">First argument.</param>
+            <param name="arg2">Second argument.</param>
+        </member>
+        <member name="M:Formulacrum.OperatorNodeFactory.Exponent">
+            <summary>
+            Returns a binary operator node for exponentiation.
+            </summary>
+            <returns>New operator node.</returns>
+        </member>
+        <member name="M:Formulacrum.OperatorNodeFactory.Exponent(Formulacrum.Node,Formulacrum.Node)">
+            <summary>
+            Returns a binary operator node for exponentiation, with the given arguments.
+            </summary>
+            <returns>New operator node.</returns>
+            <param name="arg1">First argument.</param>
+            <param name="arg2">Second argument.</param>
+        </member>
+        <member name="M:Formulacrum.OperatorNodeFactory.Negate">
+            <summary>
+            Returns a unary operator node for negation.
+            </summary>
+            <returns>New operator node.</returns>
+        </member>
+        <member name="M:Formulacrum.OperatorNodeFactory.Negate(Formulacrum.Node)">
+            <summary>
+            Returns a unary operator node for negation, with the given argument.
+            </summary>
+            <returns>New operator node.</returns>
+            <param name="arg">Argument.</param>
+        </member>
+        <member name="M:Formulacrum.OperatorNodeFactory.Percent">
+            <summary>
+            Returns a unary operator node for percent.
+            </summary>
+            <returns>New operator node.</returns>
+        </member>
+        <member name="M:Formulacrum.OperatorNodeFactory.Percent(Formulacrum.Node)">
+            <summary>
+            Returns a unary operator node for percent, with the given argument.
+            </summary>
+            <returns>New operator node.</returns>
+            <param name="arg">Argument.</param>
+        </member>
+        <member name="M:Formulacrum.OperatorNodeFactory.Formula">
+            <summary>
+            Returns a unary operator node for the formula operator (=).
+            </summary>
+            <returns>New operator node.</returns>
+        </member>
+        <member name="M:Formulacrum.OperatorNodeFactory.Formula(Formulacrum.Node)">
+            <summary>
+            Returns a binary operator node for the formula operator, with the given body.
+            </summary>
+            <returns>New operator node.</returns>
+            <param name="body">Formula body</param>
+        </member>
+        <member name="M:Formulacrum.OperatorNodeFactory.Concat">
+            <summary>
+            Returns a binary operator node for concatenation.
+            </summary>
+            <returns>New operator node.</returns>
+        </member>
+        <member name="M:Formulacrum.OperatorNodeFactory.Concat(Formulacrum.Node,Formulacrum.Node)">
+            <summary>
+            Returns a binary operator node for concatenation, with the given arguments.
+            </summary>
+            <returns>New operator node.</returns>
+            <param name="arg1">First argument.</param>
+            <param name="arg2">Second argument.</param>
+        </member>
+        <member name="T:Formulacrum.RelativeReferenceNodeFactory">
+            <summary>Factory for relative reference formula nodes.</summary>
+        </member>
+        <member name="M:Formulacrum.RelativeReferenceNodeFactory.Empty">
+            <summary>
+            Returns relative reference node with unassigned coordinates.
+            </summary>
+            <returns>New relative reference node.</returns>
+        </member>
+        <member name="M:Formulacrum.RelativeReferenceNodeFactory.Cell(Formulacrum.IntNode,Formulacrum.IntNode)">
+            <summary>
+            Returns relative reference node with coordinates for the cell at the given row and column.
+            </summary>
+            <param name="row">Row number.</param>
+            <param name="column">Column number.</param>
+            <returns>New relative reference node.</returns>
+        </member>
+        <member name="M:Formulacrum.RelativeReferenceNodeFactory.Row(Formulacrum.IntNode)">
+            <summary>
+            Returns relative reference node with coordinates for the row at the give index.
+            </summary>
+            <param name="index">Row number.</param>
+            <returns>New relative reference node.</returns>
+        </member>
+        <member name="M:Formulacrum.RelativeReferenceNodeFactory.Rows(Formulacrum.IntNode,Formulacrum.IntNode)">
+            <summary>
+            Returns relative reference node with coordinates for the span of rows between the two given indexes.
+            </summary>
+            <param name="top">First row.</param>
+            <param name="bottom">Last row.</param>
+            <returns>New relative reference node.</returns>
+        </member>
+        <member name="M:Formulacrum.RelativeReferenceNodeFactory.Column(Formulacrum.IntNode)">
+            <summary>
+            Returns relative reference node with coordinates for the column at the give index.
+            </summary>
+            <param name="index">Column number.</param>
+            <returns>New relative reference node.</returns>
+        </member>
+        <member name="M:Formulacrum.RelativeReferenceNodeFactory.Columns(Formulacrum.IntNode,Formulacrum.IntNode)">
+            <summary>
+            Returns relative reference node with coordinates for the span of columns between the two given indexes.
+            </summary>
+            <param name="left">First column.</param>
+            <param name="right">Last column.</param>
+            <returns>New relative reference node.</returns>
+        </member>
+        <member name="M:Formulacrum.RelativeReferenceNodeFactory.Range(Formulacrum.IntNode,Formulacrum.IntNode,Formulacrum.IntNode,Formulacrum.IntNode)">
+            <summary>
+            Returns relative reference node with the given coordinates.
+            </summary>
+            <param name="top">First row.</param>
+            <param name="left">First column.</param>
+            <param name="bottom">Last row.</param>
+            <param name="right">Last column.</param>
+            <returns>New relative reference node.</returns>
+        </member>
+        <member name="T:Formulacrum.LiteralNodeFactory">
+            <summary>
+            Factory for literal formula nodes.
+            </summary>
+        </member>
+        <member name="M:Formulacrum.LiteralNodeFactory.String(System.String)">
+            <summary>
+            Returns a node containing a string literal.
+            </summary>
+            <param name="value">String literal.</param>
+            <returns>Node containing string literal.</returns>
+        </member>
+        <member name="M:Formulacrum.LiteralNodeFactory.Int(System.Int32)">
+            <summary>
+            Returns a node containing an integer literal.
+            </summary>
+            <param name="value">Integer literal.</param>
+            <returns>Node containing integer literal.</returns>
+        </member>
+        <member name="M:Formulacrum.LiteralNodeFactory.Book(System.String)">
+            <summary>
+            Returns a node containing a workbook reference.
+            </summary>
+            <param name="name">Workbook name.</param>
+            <returns>Node containing workbook reference.</returns>
+        </member>
+        <member name="M:Formulacrum.LiteralNodeFactory.Sheet(System.String)">
+            <summary>
+            Returns a node containing a worksheet reference.
+            </summary>
+            <param name="name">Worksheet name.</param>
+            <returns>Node containing worksheet reference.</returns>
+        </member>
+        <member name="M:Formulacrum.LiteralNodeFactory.Decimal(System.Decimal,System.String)">
+            <summary>
+            Returns a node containing a decimal literal.
+            </summary>
+            <param name="value">Decimal literal.</param>
+            <param name="format">Format string.</param>
+            <returns>Node containing decimal literal.</returns>
+        </member>
+        <member name="M:Formulacrum.LiteralNodeFactory.Double(System.Double,System.String)">
+            <summary>
+            Returns a node containing a floating-point literal.
+            </summary>
+            <param name="value">Floating-point literal.</param>
+            <param name="format">Format string.</param>
+            <returns>Node containing floating-point literal.</returns>
+        </member>
+        <member name="M:Formulacrum.LiteralNodeFactory.Bool(System.Boolean)">
+            <summary>
+            Returns a node containing a boolean literal.
+            </summary>
+            <param name="value">Boolean literal.</param>
+            <returns>Node containing boolean literal.</returns>
+        </member>
+        <member name="T:Formulacrum.NodeExt">
+            <summary>
+            Extension methods for Formulacrum.Node.
+            </summary>
+        </member>
+        <member name="M:Formulacrum.NodeExt.Apply(Formulacrum.Node,Formulacrum.BinaryOperatorNode,Formulacrum.Node)">
+            <summary>
+            Sets the arguments of the given binary operator to the given nodes,
+            and returns the binary operator node.
+            </summary>
+            <param name="arg1">First operand.</param>
+            <param name="op">Binary operator node.</param>
+            <param name="arg2">Second operand.</param>
+            <returns><paramref name="op"/>, with <paramref name="arg1"/> and <paramref name="arg2"/> assigned as arguments.</returns>
+            <remarks>This method can be used for convenience to allow nodes for binary operators to be used
+            in infix notation in source code, rather than the default prefix notation.</remarks>
+            <exception cref="T:System.ArgumentNullException">Thrown if <paramref name="op"/> is <c>null</c>.</exception>
+        </member>
         <member name="T:Formulacrum.FunctionNode">
             <summary>
             Formula node representing a function.
@@ -482,7 +915,7 @@
             </summary>
             <returns>New node with identical properties to this instance, but with no child nodes assigned.</returns>
         </member>
-        <member name="M:Formulacrum.BinaryOperatorNode.SetArgs(Formulacrum.Node,Formulacrum.Node)">
+        <member name="M:Formulacrum.BinaryOperatorNode.SetValues(Formulacrum.Node,Formulacrum.Node)">
             <summary>Sets the arguments to the given nodes, and returns this node.</summary>
             <param name="arg1">First argument.</param>
             <param name="arg2">Second argument.</param>
@@ -698,6 +1131,16 @@
             followed by <c>Coordinates</c>.</remarks>
             <param name="outline">Has no effect for reference nodes.</param>
             <returns>Rendered formula.</returns>
+        </member>
+        <member name="M:Formulacrum.ReferenceNode.SetCoordinates(Formulacrum.IntNode,Formulacrum.IntNode,Formulacrum.IntNode,Formulacrum.IntNode)">
+            <summary>
+            Sets the coordinate nodes of this instance to the given nodes, then returns this node.
+            </summary>
+            <param name="top">New top row node.</param>
+            <param name="left">New left column node.</param>
+            <param name="bottom">New bottom row node.</param>
+            <param name="right">New right column node.</param>
+            <returns>Reference to this node.</returns>
         </member>
         <member name="T:Formulacrum.RelativeReferenceNode">
             <summary>
