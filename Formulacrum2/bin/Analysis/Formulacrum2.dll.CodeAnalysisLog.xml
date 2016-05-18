@@ -1,0 +1,411 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="c:\program files (x86)\microsoft visual studio 14.0\team tools\static analysis tools\fxcop\Xml\CodeAnalysisReport.xsl"?>
+<FxCopReport Version="14.0">
+ <Namespaces>
+  <Namespace Name="Formulacrum">
+   <Messages>
+    <Message Id="Formulacrum" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Active" Created="2016-05-18 00:56:15Z" FixCategory="Breaking">
+     <Issue Name="Namespace" Certainty="75" Level="CriticalWarning">Correct the spelling of 'Formulacrum' in namespace name 'Formulacrum'.</Issue>
+    </Message>
+   </Messages>
+  </Namespace>
+ </Namespaces>
+ <Targets>
+  <Target Name="C:\Users\James\Documents\GitHub\Formulacrum\Formulacrum2\bin\Analysis\Formulacrum2.dll">
+   <Modules>
+    <Module Name="formulacrum2.dll">
+     <Messages>
+      <Message Id="Formulacrum" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Active" Created="2016-05-18 00:56:15Z" FixCategory="Breaking">
+       <Issue Name="Assembly" Certainty="75" Level="CriticalWarning">Correct the spelling of 'Formulacrum' in assembly name 'Formulacrum2.dll'.</Issue>
+      </Message>
+      <Message TypeName="MarkAssembliesWithClsCompliant" Category="Microsoft.Design" CheckId="CA1014" Status="Active" Created="2016-05-18 00:56:15Z" FixCategory="NonBreaking">
+       <Issue Certainty="95" Level="Error">Mark 'Formulacrum2.dll' with CLSCompliant(true) because it exposes externally visible types.</Issue>
+      </Message>
+     </Messages>
+     <Namespaces>
+      <Namespace Name="Formulacrum">
+       <Types>
+        <Type Name="AbsoluteReferenceNode" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="#ColumnNumberToLetters(System.Int32)" Kind="Method" Static="True" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message Id="n" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Active" Created="2016-05-18 00:56:15Z" FixCategory="Breaking">
+             <Issue Name="MemberParameterMoreMeaningfulName" Certainty="75" Level="CriticalWarning" Path="C:\Users\James\Documents\GitHub\Formulacrum\Formulacrum2\Nodes\Reference Nodes" File="AbsoluteReferenceNode.cs" Line="88">In method 'AbsoluteReferenceNode.ColumnNumberToLetters(int)', consider providing a more meaningful name than parameter name 'n'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#CoordinatesImpl(Formulacrum.IntNode,Formulacrum.IntNode,Formulacrum.IntNode,Formulacrum.IntNode)" Kind="Method" Static="False" Accessibility="Family" ExternallyVisible="False">
+           <Messages>
+            <Message Id="0" TypeName="Validate arguments of public methods" Category="Microsoft.Design" CheckId="CA1062" Status="Active" Created="2016-05-18 00:56:15Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="C:\Users\James\Documents\GitHub\Formulacrum\Formulacrum2\Nodes\Reference Nodes" File="AbsoluteReferenceNode.cs" Line="70">In externally visible method 'AbsoluteReferenceNode.CoordinatesImpl(IntNode, IntNode, IntNode, IntNode)', validate parameter 'top' before using it.</Issue>
+            </Message>
+            <Message Id="1" TypeName="Validate arguments of public methods" Category="Microsoft.Design" CheckId="CA1062" Status="Active" Created="2016-05-18 00:56:15Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="C:\Users\James\Documents\GitHub\Formulacrum\Formulacrum2\Nodes\Reference Nodes" File="AbsoluteReferenceNode.cs" Line="66">In externally visible method 'AbsoluteReferenceNode.CoordinatesImpl(IntNode, IntNode, IntNode, IntNode)', validate parameter 'left' before using it.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#Left" Kind="Property" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Accessors>
+            <Accessor Name="#set_Left(Formulacrum.IntNode)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+             <Messages>
+              <Message Id="0" TypeName="Validate arguments of public methods" Category="Microsoft.Design" CheckId="CA1062" Status="Active" Created="2016-05-18 00:56:15Z" FixCategory="DependsOnFix">
+               <Issue Certainty="75" Level="Warning" Path="C:\Users\James\Documents\GitHub\Formulacrum\Formulacrum2\Nodes\Reference Nodes" File="AbsoluteReferenceNode.cs" Line="40">In externally visible method 'AbsoluteReferenceNode.Left.set(IntNode)', validate parameter 'value' before using it.</Issue>
+              </Message>
+             </Messages>
+            </Accessor>
+           </Accessors>
+          </Member>
+          <Member Name="#Top" Kind="Property" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Accessors>
+            <Accessor Name="#set_Top(Formulacrum.IntNode)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+             <Messages>
+              <Message Id="0" TypeName="Validate arguments of public methods" Category="Microsoft.Design" CheckId="CA1062" Status="Active" Created="2016-05-18 00:56:15Z" FixCategory="DependsOnFix">
+               <Issue Certainty="75" Level="Warning" Path="C:\Users\James\Documents\GitHub\Formulacrum\Formulacrum2\Nodes\Reference Nodes" File="AbsoluteReferenceNode.cs" Line="26">In externally visible method 'AbsoluteReferenceNode.Top.set(IntNode)', validate parameter 'value' before using it.</Issue>
+              </Message>
+             </Messages>
+            </Accessor>
+           </Accessors>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="IntNode" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="#.ctor(System.Int32,System.String)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="DefaultParametersShouldNotBeUsed" Category="Microsoft.Design" CheckId="CA1026" Status="Active" Created="2016-05-18 00:56:15Z" FixCategory="Breaking">
+             <Issue Certainty="75" Level="Error" Path="C:\Users\James\Documents\GitHub\Formulacrum\Formulacrum2\Nodes\Literal Nodes" File="IntNode.cs" Line="18">Replace method 'IntNode.IntNode(int, string)' with an overload that supplies all default arguments.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="LiteralNode`1" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="#.ctor(!0,System.String)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="DefaultParametersShouldNotBeUsed" Category="Microsoft.Design" CheckId="CA1026" Status="Active" Created="2016-05-18 00:56:15Z" FixCategory="Breaking">
+             <Issue Certainty="75" Level="Error" Path="C:\Users\James\Documents\GitHub\Formulacrum\Formulacrum2\Nodes\Literal Nodes" File="LiteralNode.cs" Line="20">Replace method 'LiteralNode&lt;T&gt;.LiteralNode(T, string)' with an overload that supplies all default arguments.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#Render(System.Boolean)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="DefaultParametersShouldNotBeUsed" Category="Microsoft.Design" CheckId="CA1026" Status="Active" Created="2016-05-18 00:56:15Z" FixCategory="Breaking">
+             <Issue Certainty="75" Level="Error" Path="C:\Users\James\Documents\GitHub\Formulacrum\Formulacrum2\Nodes\Literal Nodes" File="LiteralNode.cs" Line="50">Replace method 'LiteralNode&lt;T&gt;.Render(bool)' with an overload that supplies all default arguments.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="Node" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="#Render(System.Boolean)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="SealMethodsThatSatisfyPrivateInterfaces" Category="Microsoft.Security" CheckId="CA2119" Status="Active" Created="2016-05-18 00:56:15Z" FixCategory="Breaking">
+             <Issue Certainty="75" Level="Error">'Node.Render(bool)' is an overridable method that satisfies a member on the private interface 'IFormula'. Mark the method as final, implement it explicitly or seal its declaring type 'Node'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="NodeList" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Messages>
+          <Message TypeName="IdentifiersShouldHaveCorrectSuffix" Category="Microsoft.Naming" CheckId="CA1710" Status="Active" Created="2016-05-18 00:56:15Z" FixCategory="Breaking">
+           <Issue Certainty="95" Level="Error">Rename 'NodeList' to end in 'Collection'.</Issue>
+          </Message>
+         </Messages>
+         <Members>
+          <Member Name="#.ctor(System.Int32,System.Int32)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="InstantiateArgumentExceptionsCorrectly" Category="Microsoft.Usage" CheckId="CA2208" Status="Active" Created="2016-05-18 00:56:15Z" FixCategory="NonBreaking">
+             <Issue Name="IncorrectParameterName" Certainty="95" Level="CriticalError" Path="C:\Users\James\Documents\GitHub\Formulacrum\Formulacrum2\Nodes" File="NodeList.cs" Line="33">Method 'NodeList.NodeList(int, int)' passes 'maxCount must be greater than or equal to minCount' as the 'paramName' argument to a 'ArgumentOutOfRangeException' constructor. Replace this argument with one of the method's parameter names. Note that the provided parameter name should have the exact casing as declared on the method.</Issue>
+             <Issue Name="IncorrectParameterName" Certainty="95" Level="CriticalError" Path="C:\Users\James\Documents\GitHub\Formulacrum\Formulacrum2\Nodes" File="NodeList.cs" Line="35">Method 'NodeList.NodeList(int, int)' passes 'maxCount must be less than or equal to CountLimit' as the 'paramName' argument to a 'ArgumentOutOfRangeException' constructor. Replace this argument with one of the method's parameter names. Note that the provided parameter name should have the exact casing as declared on the method.</Issue>
+             <Issue Name="IncorrectParameterName" Certainty="95" Level="CriticalError" Path="C:\Users\James\Documents\GitHub\Formulacrum\Formulacrum2\Nodes" File="NodeList.cs" Line="31">Method 'NodeList.NodeList(int, int)' passes 'minCount must be 0 or greater' as the 'paramName' argument to a 'ArgumentOutOfRangeException' constructor. Replace this argument with one of the method's parameter names. Note that the provided parameter name should have the exact casing as declared on the method.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#GetNode`1(System.Int32)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="DoNotRaiseReservedExceptionTypes" Category="Microsoft.Usage" CheckId="CA2201" Status="Active" Created="2016-05-18 00:56:15Z" FixCategory="Breaking">
+             <Issue Name="Reserved" Certainty="95" Level="Error" Path="C:\Users\James\Documents\GitHub\Formulacrum\Formulacrum2\Nodes" File="NodeList.cs" Line="133">'NodeList.GetNode&lt;TNode&gt;(int)' creates an exception of type 'IndexOutOfRangeException', an exception type that is reserved by the runtime and should never be raised by managed code. If this exception instance might be thrown, use a different exception type.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#Item[System.Int32]" Kind="Property" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Accessors>
+            <Accessor Name="#get_Item(System.Int32)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+             <Messages>
+              <Message TypeName="DoNotRaiseExceptionsInUnexpectedLocations" Category="Microsoft.Design" CheckId="CA1065" Status="Active" Created="2016-05-18 00:56:15Z" FixCategory="Breaking">
+               <Issue Name="PropertyGetter" Certainty="90" Level="Warning" Path="C:\Users\James\Documents\GitHub\Formulacrum\Formulacrum2\Nodes" File="NodeList.cs" Line="67">'NodeList.this.get(int)' creates an exception of type 'IndexOutOfRangeException', an exception type that should not be raised in a property. If this exception instance might be raised, use a different exception type, convert this property into a method, or change this property's logic so that it no longer raises an exception.</Issue>
+              </Message>
+              <Message TypeName="DoNotRaiseReservedExceptionTypes" Category="Microsoft.Usage" CheckId="CA2201" Status="Active" Created="2016-05-18 00:56:15Z" FixCategory="Breaking">
+               <Issue Name="Reserved" Certainty="95" Level="Error" Path="C:\Users\James\Documents\GitHub\Formulacrum\Formulacrum2\Nodes" File="NodeList.cs" Line="67">'NodeList.this.get(int)' creates an exception of type 'IndexOutOfRangeException', an exception type that is reserved by the runtime and should never be raised by managed code. If this exception instance might be thrown, use a different exception type.</Issue>
+              </Message>
+             </Messages>
+            </Accessor>
+            <Accessor Name="#set_Item(System.Int32,Formulacrum.Node)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+             <Messages>
+              <Message TypeName="DoNotRaiseReservedExceptionTypes" Category="Microsoft.Usage" CheckId="CA2201" Status="Active" Created="2016-05-18 00:56:15Z" FixCategory="Breaking">
+               <Issue Name="Reserved" Certainty="95" Level="Error" Path="C:\Users\James\Documents\GitHub\Formulacrum\Formulacrum2\Nodes" File="NodeList.cs" Line="72">'NodeList.this.set(int, Node)' creates an exception of type 'IndexOutOfRangeException', an exception type that is reserved by the runtime and should never be raised by managed code. If this exception instance might be thrown, use a different exception type.</Issue>
+              </Message>
+             </Messages>
+            </Accessor>
+           </Accessors>
+          </Member>
+          <Member Name="#Render(System.Boolean)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="DefaultParametersShouldNotBeUsed" Category="Microsoft.Design" CheckId="CA1026" Status="Active" Created="2016-05-18 00:56:15Z" FixCategory="Breaking">
+             <Issue Certainty="75" Level="Error" Path="C:\Users\James\Documents\GitHub\Formulacrum\Formulacrum2\Nodes" File="NodeList.cs" Line="149">Replace method 'NodeList.Render(bool)' with an overload that supplies all default arguments.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="ReferenceNode" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="#Bottom" Kind="Property" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Accessors>
+            <Accessor Name="#set_Bottom(Formulacrum.IntNode)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+             <Messages>
+              <Message TypeName="InstantiateArgumentExceptionsCorrectly" Category="Microsoft.Usage" CheckId="CA2208" Status="Active" Created="2016-05-18 00:56:15Z" FixCategory="NonBreaking">
+               <Issue Name="IncorrectParameterName" Certainty="95" Level="CriticalError" Path="C:\Users\James\Documents\GitHub\Formulacrum\Formulacrum2\Nodes\Reference Nodes" File="ReferenceNode.cs" Line="64">Method 'ReferenceNode.Bottom.set(IntNode)' passes ''Bottom' must have higher number than 'Top'.' as the 'paramName' argument to a 'ArgumentOutOfRangeException' constructor. Replace this argument with one of the method's parameter names. Note that the provided parameter name should have the exact casing as declared on the method.</Issue>
+              </Message>
+             </Messages>
+            </Accessor>
+           </Accessors>
+          </Member>
+          <Member Name="#CoordinatesImpl(Formulacrum.IntNode,Formulacrum.IntNode,Formulacrum.IntNode,Formulacrum.IntNode)" Kind="Method" Static="False" Accessibility="Family" ExternallyVisible="True">
+           <Messages>
+            <Message Id="Impl" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Active" Created="2016-05-18 00:56:15Z" FixCategory="Breaking">
+             <Issue Name="Member" Certainty="75" Level="CriticalWarning">Correct the spelling of 'Impl' in member name 'ReferenceNode.CoordinatesImpl(IntNode, IntNode, IntNode, IntNode)' or remove it entirely if it represents any sort of Hungarian notation.</Issue>
+            </Message>
+            <Message TypeName="IdentifiersShouldNotHaveIncorrectSuffix" Category="Microsoft.Naming" CheckId="CA1711" Status="Active" Created="2016-05-18 00:56:15Z" FixCategory="Breaking">
+             <Issue Name="MemberWithAlternate" Certainty="95" Level="CriticalError">Either replace the suffix 'Impl' in member name ''ReferenceNode.CoordinatesImpl(IntNode, IntNode, IntNode, IntNode)'' with the suggested alternate 'Core' or remove the suffix completely.</Issue>
+            </Message>
+            <Message Id="bottom" TypeName="VariableNamesShouldNotMatchFieldNames" Category="Microsoft.Maintainability" CheckId="CA1500" Status="Active" Created="2016-05-18 00:56:15Z" FixCategory="NonBreaking">
+             <Issue Name="Parameter" Certainty="95" Level="Error">'bottom', a parameter declared in 'ReferenceNode.CoordinatesImpl(IntNode, IntNode, IntNode, IntNode)', has the same name as an instance field on the type. Change the name of one of these items.</Issue>
+            </Message>
+            <Message Id="left" TypeName="VariableNamesShouldNotMatchFieldNames" Category="Microsoft.Maintainability" CheckId="CA1500" Status="Active" Created="2016-05-18 00:56:15Z" FixCategory="NonBreaking">
+             <Issue Name="Parameter" Certainty="95" Level="Error">'left', a parameter declared in 'ReferenceNode.CoordinatesImpl(IntNode, IntNode, IntNode, IntNode)', has the same name as an instance field on the type. Change the name of one of these items.</Issue>
+            </Message>
+            <Message Id="right" TypeName="VariableNamesShouldNotMatchFieldNames" Category="Microsoft.Maintainability" CheckId="CA1500" Status="Active" Created="2016-05-18 00:56:15Z" FixCategory="NonBreaking">
+             <Issue Name="Parameter" Certainty="95" Level="Error">'right', a parameter declared in 'ReferenceNode.CoordinatesImpl(IntNode, IntNode, IntNode, IntNode)', has the same name as an instance field on the type. Change the name of one of these items.</Issue>
+            </Message>
+            <Message Id="top" TypeName="VariableNamesShouldNotMatchFieldNames" Category="Microsoft.Maintainability" CheckId="CA1500" Status="Active" Created="2016-05-18 00:56:15Z" FixCategory="NonBreaking">
+             <Issue Name="Parameter" Certainty="95" Level="Error">'top', a parameter declared in 'ReferenceNode.CoordinatesImpl(IntNode, IntNode, IntNode, IntNode)', has the same name as an instance field on the type. Change the name of one of these items.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#Left" Kind="Property" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Accessors>
+            <Accessor Name="#set_Left(Formulacrum.IntNode)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+             <Messages>
+              <Message TypeName="InstantiateArgumentExceptionsCorrectly" Category="Microsoft.Usage" CheckId="CA2208" Status="Active" Created="2016-05-18 00:56:15Z" FixCategory="NonBreaking">
+               <Issue Name="IncorrectParameterName" Certainty="95" Level="CriticalError" Path="C:\Users\James\Documents\GitHub\Formulacrum\Formulacrum2\Nodes\Reference Nodes" File="ReferenceNode.cs" Line="46">Method 'ReferenceNode.Left.set(IntNode)' passes ''Left' must have lower number than 'Right'.' as the 'paramName' argument to a 'ArgumentOutOfRangeException' constructor. Replace this argument with one of the method's parameter names. Note that the provided parameter name should have the exact casing as declared on the method.</Issue>
+              </Message>
+              <Message Id="0" TypeName="Validate arguments of public methods" Category="Microsoft.Design" CheckId="CA1062" Status="Active" Created="2016-05-18 00:56:15Z" FixCategory="DependsOnFix">
+               <Issue Certainty="75" Level="Warning" Path="C:\Users\James\Documents\GitHub\Formulacrum\Formulacrum2\Nodes\Reference Nodes" File="ReferenceNode.cs" Line="45">In externally visible method 'ReferenceNode.Left.set(IntNode)', validate parameter 'value' before using it.</Issue>
+              </Message>
+             </Messages>
+            </Accessor>
+           </Accessors>
+          </Member>
+          <Member Name="#Right" Kind="Property" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Accessors>
+            <Accessor Name="#set_Right(Formulacrum.IntNode)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+             <Messages>
+              <Message TypeName="InstantiateArgumentExceptionsCorrectly" Category="Microsoft.Usage" CheckId="CA2208" Status="Active" Created="2016-05-18 00:56:15Z" FixCategory="NonBreaking">
+               <Issue Name="IncorrectParameterName" Certainty="95" Level="CriticalError" Path="C:\Users\James\Documents\GitHub\Formulacrum\Formulacrum2\Nodes\Reference Nodes" File="ReferenceNode.cs" Line="82">Method 'ReferenceNode.Right.set(IntNode)' passes ''Right' must have higher number than 'Left'.' as the 'paramName' argument to a 'ArgumentOutOfRangeException' constructor. Replace this argument with one of the method's parameter names. Note that the provided parameter name should have the exact casing as declared on the method.</Issue>
+              </Message>
+             </Messages>
+            </Accessor>
+           </Accessors>
+          </Member>
+          <Member Name="#Top" Kind="Property" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Accessors>
+            <Accessor Name="#set_Top(Formulacrum.IntNode)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+             <Messages>
+              <Message TypeName="InstantiateArgumentExceptionsCorrectly" Category="Microsoft.Usage" CheckId="CA2208" Status="Active" Created="2016-05-18 00:56:15Z" FixCategory="NonBreaking">
+               <Issue Name="IncorrectParameterName" Certainty="95" Level="CriticalError" Path="C:\Users\James\Documents\GitHub\Formulacrum\Formulacrum2\Nodes\Reference Nodes" File="ReferenceNode.cs" Line="32">Method 'ReferenceNode.Top.set(IntNode)' passes ''Top' must have lower number than 'Bottom'.' as the 'paramName' argument to a 'ArgumentOutOfRangeException' constructor. Replace this argument with one of the method's parameter names. Note that the provided parameter name should have the exact casing as declared on the method.</Issue>
+              </Message>
+              <Message Id="0" TypeName="Validate arguments of public methods" Category="Microsoft.Design" CheckId="CA1062" Status="Active" Created="2016-05-18 00:56:15Z" FixCategory="DependsOnFix">
+               <Issue Certainty="75" Level="Warning" Path="C:\Users\James\Documents\GitHub\Formulacrum\Formulacrum2\Nodes\Reference Nodes" File="ReferenceNode.cs" Line="31">In externally visible method 'ReferenceNode.Top.set(IntNode)', validate parameter 'value' before using it.</Issue>
+              </Message>
+             </Messages>
+            </Accessor>
+           </Accessors>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="RelativeReferenceNode" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="#CoordinatesImpl(Formulacrum.IntNode,Formulacrum.IntNode,Formulacrum.IntNode,Formulacrum.IntNode)" Kind="Method" Static="False" Accessibility="Family" ExternallyVisible="False">
+           <Messages>
+            <Message Id="0" TypeName="Validate arguments of public methods" Category="Microsoft.Design" CheckId="CA1062" Status="Active" Created="2016-05-18 00:56:15Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="C:\Users\James\Documents\GitHub\Formulacrum\Formulacrum2\Nodes\Reference Nodes" File="RelativeReferenceNode.cs" Line="33">In externally visible method 'RelativeReferenceNode.CoordinatesImpl(IntNode, IntNode, IntNode, IntNode)', validate parameter 'top' before using it.</Issue>
+            </Message>
+            <Message Id="1" TypeName="Validate arguments of public methods" Category="Microsoft.Design" CheckId="CA1062" Status="Active" Created="2016-05-18 00:56:15Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="C:\Users\James\Documents\GitHub\Formulacrum\Formulacrum2\Nodes\Reference Nodes" File="RelativeReferenceNode.cs" Line="37">In externally visible method 'RelativeReferenceNode.CoordinatesImpl(IntNode, IntNode, IntNode, IntNode)', validate parameter 'left' before using it.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="StringNode" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="#.ctor(System.String,System.String)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="DefaultParametersShouldNotBeUsed" Category="Microsoft.Design" CheckId="CA1026" Status="Active" Created="2016-05-18 00:56:15Z" FixCategory="Breaking">
+             <Issue Certainty="75" Level="Error" Path="C:\Users\James\Documents\GitHub\Formulacrum\Formulacrum2\Nodes\Literal Nodes" File="StringNode.cs" Line="18">Replace method 'StringNode.StringNode(string, string)' with an overload that supplies all default arguments.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+       </Types>
+      </Namespace>
+     </Namespaces>
+    </Module>
+   </Modules>
+  </Target>
+ </Targets>
+ <Rules>
+  <Rule TypeName="DefaultParametersShouldNotBeUsed" Category="Microsoft.Design" CheckId="CA1026">
+   <Name>Default parameters should not be used</Name>
+   <Description>Some programming languages do not support default parameters. Replace default parameters with method overloads that supply the default argument.</Description>
+   <Resolution Name="Default">Replace method {0} with an overload that supplies all default arguments.</Resolution>
+   <Owner />
+   <Url>http://msdn.microsoft.com/library/ms182135.aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="75">Error</MessageLevel>
+   <File Name="designrules.dll" Version="14.0.0.0" />
+  </Rule>
+  <Rule TypeName="DoNotRaiseExceptionsInUnexpectedLocations" Category="Microsoft.Design" CheckId="CA1065">
+   <Name>Do not raise exceptions in unexpected locations</Name>
+   <Description>Do not explicitly raise exceptions from unexpected locations. There are some methods, such as Equals and GetHashCode, which users do not expect to raise exceptions. Therefore calls to these methods are not commonly wrapped in try catch blocks.</Description>
+   <Resolution Name="PropertyGetter">{0} creates an exception of type {1}, an exception type that should not be raised in a property. If this exception instance might be raised, use a different exception type, convert this property into a method, or change this property's logic so that it no longer raises an exception.</Resolution>
+   <Owner />
+   <Url>http://msdn.microsoft.com/library/bb386039.aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="90">Error, Warning</MessageLevel>
+   <File Name="designrules.dll" Version="14.0.0.0" />
+  </Rule>
+  <Rule TypeName="DoNotRaiseReservedExceptionTypes" Category="Microsoft.Usage" CheckId="CA2201">
+   <Name>Do not raise reserved exception types</Name>
+   <Description>User code should not create and raise exceptions of certain types that are reserved by the runtime or which are of a too general exception type. Exception types that are too general include Exception, SystemException, and ApplicationException. Exception types that are reserved by the runtime include ThreadAbortException, OutOfMemoryException, ExecutionEngineException, and IndexOutOfRangeException.</Description>
+   <Resolution Name="Reserved">{0} creates an exception of type {1}, an exception type that is reserved by the runtime and should never be raised by managed code. If this exception instance might be thrown, use a different exception type.</Resolution>
+   <Owner />
+   <Url>http://msdn.microsoft.com/library/ms182338.aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="95">Error</MessageLevel>
+   <File Name="usagerules.dll" Version="14.0.0.0" />
+  </Rule>
+  <Rule TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704">
+   <Name>Identifiers should be spelled correctly</Name>
+   <Description>The individual words that make up an identifier should not be abbreviated and should be spelled correctly. If this rule generates a false positive on a term that should be recognized, add the word to the FxCop custom dictionary.</Description>
+   <Resolution Name="Assembly">Correct the spelling of '{0}' in assembly name {1}.</Resolution>
+   <Resolution Name="Member">Correct the spelling of '{0}' in member name {1} or remove it entirely if it represents any sort of Hungarian notation.</Resolution>
+   <Resolution Name="MemberParameterMoreMeaningfulName">In method {0}, consider providing a more meaningful name than parameter name {1}.</Resolution>
+   <Resolution Name="Namespace">Correct the spelling of '{0}' in namespace name '{1}'.</Resolution>
+   <Owner />
+   <Url>http://msdn.microsoft.com/library/bb264492.aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="75">CriticalWarning</MessageLevel>
+   <File Name="namingrules.dll" Version="14.0.0.0" />
+  </Rule>
+  <Rule TypeName="IdentifiersShouldHaveCorrectSuffix" Category="Microsoft.Naming" CheckId="CA1710">
+   <Name>Identifiers should have correct suffix</Name>
+   <Description>Types that extend certain base types have specified name suffixes. Types that extend Attribute, for example, should be suffixed in 'Attribute', as in ObsoleteAttribute. This rules checks types that extend several base types, including Attribute, Exception, EventArgs, IMembershipPermission, Stream, and others.</Description>
+   <Resolution Name="Default">Rename {0} to end in '{1}'.</Resolution>
+   <Owner />
+   <Url>http://msdn.microsoft.com/library/ms182244.aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="95">Error</MessageLevel>
+   <File Name="namingrules.dll" Version="14.0.0.0" />
+  </Rule>
+  <Rule TypeName="IdentifiersShouldNotHaveIncorrectSuffix" Category="Microsoft.Naming" CheckId="CA1711">
+   <Name>Identifiers should not have incorrect suffix</Name>
+   <Description>Types that do not extend certain base types should not use reserved name suffixes. Types and members should not use 'Ex' or 'New' to distinguish them from an earlier version of the same API, instead, use a numeric suffix such as '2' or provide a more meaningful suffix. Concrete type implementations and members should not end 'Impl'. Members instead, should either consider using the suggested alternate 'Core' in replacement of 'Impl' or avoid any suffix at all.</Description>
+   <Resolution Name="MemberWithAlternate">Either replace the suffix '{0}' in member name '{1}' with the suggested alternate '{2}' or remove the suffix completely.</Resolution>
+   <Owner />
+   <Url>http://msdn.microsoft.com/library/ms182247.aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="95">CriticalError</MessageLevel>
+   <File Name="namingrules.dll" Version="14.0.0.0" />
+  </Rule>
+  <Rule TypeName="InstantiateArgumentExceptionsCorrectly" Category="Microsoft.Usage" CheckId="CA2208">
+   <Name>Instantiate argument exceptions correctly</Name>
+   <Description>String arguments passed to constructors of ArgumentException and its derived types should be correct. Types derived from ArgumentException have inconsistent constructor overloads with respect to the message and paramName parameters as compared to ArgumentException.</Description>
+   <Resolution Name="IncorrectParameterName">Method {0} passes '{1}' as the {2} argument to a {3} constructor. Replace this argument with one of the method's parameter names. Note that the provided parameter name should have the exact casing as declared on the method.</Resolution>
+   <Owner />
+   <Url>http://msdn.microsoft.com/library/ms182347.aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="95">CriticalError</MessageLevel>
+   <File Name="usagerules.dll" Version="14.0.0.0" />
+  </Rule>
+  <Rule TypeName="MarkAssembliesWithClsCompliant" Category="Microsoft.Design" CheckId="CA1014">
+   <Name>Mark assemblies with CLSCompliantAttribute</Name>
+   <Description>Assemblies should explicitly state their CLS compliance using the CLSCompliant attribute. An assembly without this attribute is not CLS-compliant. Assemblies, modules, and types can be CLS-compliant even if some parts of the assembly, module, or type are not CLS-compliant. The following rules apply: 1) If the element is marked CLSCompliant, any noncompliant members must have the CLSCompliant attribute present with its argument set to false. 2) A comparable CLS-compliant alternative member must be supplied for each member that is not CLS-compliant.</Description>
+   <Resolution Name="Default">Mark {0} with CLSCompliant(true) because it exposes externally visible types.</Resolution>
+   <Owner />
+   <Url>http://msdn.microsoft.com/library/ms182156.aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="95">Error</MessageLevel>
+   <File Name="designrules.dll" Version="14.0.0.0" />
+  </Rule>
+  <Rule TypeName="SealMethodsThatSatisfyPrivateInterfaces" Category="Microsoft.Security" CheckId="CA2119">
+   <Name>Seal methods that satisfy private interfaces</Name>
+   <Description>Externally visible types that implement non-public interfaces should not be extensible. Types that extend public types with non-public interfaces can override interface members. This can compromise object behavior or create a security vulnerability.</Description>
+   <Resolution Name="Default">{0} is an overridable method that satisfies a member on the private interface '{1}'. Mark the method as final, implement it explicitly or seal its declaring type {2}.</Resolution>
+   <Owner />
+   <Url>http://msdn.microsoft.com/library/ms182313.aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="75">Error</MessageLevel>
+   <File Name="securityrules.dll" Version="14.0.0.0" />
+  </Rule>
+  <Rule TypeName="Validate arguments of public methods" Category="Microsoft.Design" CheckId="CA1062">
+   <Name>Validate arguments of public methods</Name>
+   <Description>All reference arguments passed to externally visible methods should be checked against null (Nothing in VB). If appropriate, throw a System.ArgumentNullException when the argument is null.</Description>
+   <Resolution Name="Default">In externally visible method {0}, validate parameter '{1}' before using it.</Resolution>
+   <Owner>RuleOwner</Owner>
+   <Url>http://msdn.microsoft.com/library/ms182182.aspx</Url>
+   <Email />
+   <MessageLevel Certainty="75">Warning</MessageLevel>
+   <File Name="dataflowrules.dll" Version="14.0.0.0" />
+  </Rule>
+  <Rule TypeName="VariableNamesShouldNotMatchFieldNames" Category="Microsoft.Maintainability" CheckId="CA1500">
+   <Name>Variable names should not match field names</Name>
+   <Description>Instance field and variable names should not be identical within the same scope.</Description>
+   <Resolution Name="Parameter">{0}, a parameter declared in {1}, has the same name as an instance field on the type. Change the name of one of these items.</Resolution>
+   <Owner />
+   <Url>http://msdn.microsoft.com/library/ms182216.aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="95">Error</MessageLevel>
+   <File Name="maintainabilityrules.dll" Version="14.0.0.0" />
+  </Rule>
+ </Rules>
+ <Localized>
+  <String Key="Category">Category</String>
+  <String Key="Certainty">Certainty</String>
+  <String Key="CollapseAll">Collapse All</String>
+  <String Key="CheckId">Check Id</String>
+  <String Key="Error">Error</String>
+  <String Key="Errors">error(s)</String>
+  <String Key="ExpandAll">Expand All</String>
+  <String Key="Help">Help</String>
+  <String Key="Line">Line</String>
+  <String Key="Messages">message(s)</String>
+  <String Key="LocationNotStoredInPdb">[Location not stored in Pdb]</String>
+  <String Key="Project">Project</String>
+  <String Key="Resolution">Resolution</String>
+  <String Key="Rule">Rule</String>
+  <String Key="RuleFile">Rule File</String>
+  <String Key="RuleDescription">Rule Description</String>
+  <String Key="Source">Source</String>
+  <String Key="Status">Status</String>
+  <String Key="Target">Target</String>
+  <String Key="Warning">Warning</String>
+  <String Key="Warnings">warning(s)</String>
+  <String Key="ReportTitle">Code Analysis Report</String>
+ </Localized>
+</FxCopReport>
