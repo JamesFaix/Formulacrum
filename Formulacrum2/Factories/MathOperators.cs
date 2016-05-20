@@ -3,103 +3,99 @@
 namespace Formulacrum {
     partial class Math {
 
-
         /// <summary>
-        /// Returns a binary operator node for addition.
+        /// Returns a node for addition (+).
         /// </summary>
-        /// <returns>New operator node.</returns>
+        /// <returns>New node.</returns>
         public static BinaryOperatorNode Add() => new BinaryOperatorNode("Add", "+");
         /// <summary>
-        /// Returns a binary operator node for addition, with the given arguments.
+        /// Returns a node representing addition (+), with the given arguments.
         /// </summary>
-        /// <returns>New operator node.</returns>
+        /// <returns>New node.</returns>
         /// <param name="arg1">First argument.</param>
         /// <param name="arg2">Second argument.</param>
         public static BinaryOperatorNode Add(Node arg1, Node arg2) =>
             Add().SetValues(arg1, arg2) as BinaryOperatorNode;
 
         /// <summary>
-        /// Returns a binary operator node for subtraction.
+        /// Returns a node representing subtraction (-).
         /// </summary>
-        /// <returns>New operator node.</returns>
+        /// <returns>New node.</returns>
         public static BinaryOperatorNode Subtract() => new BinaryOperatorNode("Subtract", "-");
         /// <summary>
-        /// Returns a binary operator node for subtraction, with the given arguments.
+        /// Returns a node representing subtraction (-), with the given arguments.
         /// </summary>
-        /// <returns>New operator node.</returns>
+        /// <returns>New node.</returns>
         /// <param name="arg1">First argument.</param>
         /// <param name="arg2">Second argument.</param>
         public static BinaryOperatorNode Subtract(Node arg1, Node arg2) =>
             Subtract().SetValues(arg1, arg2) as BinaryOperatorNode;
 
         /// <summary>
-        /// Returns a binary operator node for multiplication.
+        /// Returns a node representing multiplication (*).
         /// </summary>
-        /// <returns>New operator node.</returns>
+        /// <returns>New node.</returns>
         public static BinaryOperatorNode Multiply() => new BinaryOperatorNode("Multiply", "*");
         /// <summary>
-        /// Returns a binary operator node for multiplication, with the given arguments.
+        /// Returns a node representing multiplication (*), with the given arguments.
         /// </summary>
-        /// <returns>New operator node.</returns>
+        /// <returns>New node.</returns>
         /// <param name="arg1">First argument.</param>
         /// <param name="arg2">Second argument.</param>
         public static BinaryOperatorNode Multiply(Node arg1, Node arg2) =>
             Multiply().SetValues(arg1, arg2) as BinaryOperatorNode;
 
         /// <summary>
-        /// Returns a binary operator node for division.
+        /// Returns a node representing division (/).
         /// </summary>
-        /// <returns>New operator node.</returns>
+        /// <returns>New node.</returns>
         public static BinaryOperatorNode Divide() => new BinaryOperatorNode("Divide", "/");
         /// <summary>
-        /// Returns a binary operator node for division, with the given arguments.
+        /// Returns a node representing division (/), with the given arguments.
         /// </summary>
-        /// <returns>New operator node.</returns>
+        /// <returns>New node.</returns>
         /// <param name="arg1">First argument.</param>
         /// <param name="arg2">Second argument.</param>
         public static BinaryOperatorNode Divide(Node arg1, Node arg2) =>
             Divide().SetValues(arg1, arg2) as BinaryOperatorNode;
 
         /// <summary>
-        /// Returns a binary operator node for exponentiation.
+        /// Returns a node representing exponentiation (^).
         /// </summary>
-        /// <returns>New operator node.</returns>
+        /// <returns>New node.</returns>
         public static BinaryOperatorNode Exponent() => new BinaryOperatorNode("Exponent", "^");
         /// <summary>
-        /// Returns a binary operator node for exponentiation, with the given arguments.
+        /// Returns a node representing exponentiation (^), with the given arguments.
         /// </summary>
-        /// <returns>New operator node.</returns>
+        /// <returns>New node.</returns>
         /// <param name="arg1">First argument.</param>
         /// <param name="arg2">Second argument.</param>
         public static BinaryOperatorNode Exponent(Node arg1, Node arg2) =>
             Exponent().SetValues(arg1, arg2) as BinaryOperatorNode;
 
         /// <summary>
-        /// Returns a unary operator node for negation.
+        /// Returns a node representing negation (-).
         /// </summary>
-        /// <returns>New operator node.</returns>
+        /// <returns>New node.</returns>
         public static UnaryOperatorNode Negate() => new UnaryOperatorNode("Negate", "-", true);
         /// <summary>
-        /// Returns a unary operator node for negation, with the given argument.
+        /// Returns a node representing negation (-), with the given argument.
         /// </summary>
-        /// <returns>New operator node.</returns>
+        /// <returns>New node.</returns>
         /// <param name="arg">Argument.</param>
         public static UnaryOperatorNode Negate(Node arg) => Negate().SetValues(arg);
 
         /// <summary>
-        /// Returns a unary operator node for percent.
+        /// Returns a node representing percent (%).
         /// </summary>
-        /// <returns>New operator node.</returns>
+        /// <returns>New node.</returns>
         public static UnaryOperatorNode Percent() => new UnaryOperatorNode("Percent", "%", false);
         /// <summary>
-        /// Returns a unary operator node for percent, with the given argument.
+        /// Returns a node representing percent (%), with the given argument.
         /// </summary>
-        /// <returns>New operator node.</returns>
+        /// <returns>New node.</returns>
         /// <param name="arg">Argument.</param>
         public static UnaryOperatorNode Percent(Node arg) => Percent().SetValues(arg);
-
-
-
 
     }
 }

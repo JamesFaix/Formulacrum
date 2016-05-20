@@ -4,1038 +4,18 @@
         <name>Formulacrum</name>
     </assembly>
     <members>
-        <member name="T:Formulacrum.StringExt">
+        <member name="T:Formulacrum.Nodes.CommonImplementation">
             <summary>
             Extension methods for internal convenience.
             </summary>
         </member>
-        <member name="M:Formulacrum.StringExt.ToDelimitedString(System.Collections.Generic.IEnumerable{System.String},System.String)">
+        <member name="M:Formulacrum.Nodes.CommonImplementation.ToDelimitedString(System.Collections.Generic.IEnumerable{System.String},System.String)">
             <summary>
             Returns a string composed of each string of input collection, separated by a delimiter.
             </summary>
             <param name="strings">Input collection.</param>
             <param name="delimiter">Delimiter.</param>
             <returns>String composed of each string of input collection, separated by a delimiter.</returns>
-        </member>
-        <member name="M:Formulacrum.CommonImplementation.Aggregate(System.String,Formulacrum.Nodes.Node[])">
-            <summary>
-            Returns a function node with the given name that can take between 1 and
-            <see cref="F:Formulacrum.Nodes.NodeCollection.CountLimit"/> arguments, and assigns the
-            given arguments starting at the first argument index.
-            </summary>
-            <param name="name">Name of function.</param>
-            <param name="args">Arguments to assign. New node will always have room for 1 to
-            <see cref="F:Formulacrum.Nodes.NodeCollection.CountLimit"/> arguments, regardless of how many are assigned.</param>
-            <returns>New function node.</returns>
-            <remarks>New node will always have room for 1 to 30 arguments, regardless
-            of how many are assigned.</remarks>
-        </member>
-        <member name="T:Formulacrum.Common">
-            <summary>
-            Factory for general-purpose nodes.
-            </summary>
-        </member>
-        <member name="M:Formulacrum.Common.Group">
-            <summary>
-            Returns a group node for wrapping other nodes in parentheses.
-            </summary>
-            <returns>Group node for wrapping other nodes in parentheses.</returns>
-        </member>
-        <member name="M:Formulacrum.Common.Group(Formulacrum.Nodes.Node[])">
-            <summary>
-            Returns a group node wrapping the given nodes in parentheses.
-            </summary>
-            <param name="nodes">Nodes to group.</param>
-            <returns>Group node wrapping the given nodes in parentheses.</returns>
-        </member>
-        <member name="M:Formulacrum.Common.Array">
-            <summary>
-            Returns a group node for wrapping other nodes in an array (with curly braces).
-            </summary>
-            <returns>Group node for wrapping other nodes in an array.</returns>
-        </member>
-        <member name="M:Formulacrum.Common.Array(Formulacrum.Nodes.Node[])">
-            <summary>
-            Returns a group node wrapping the given nodes in an array (with curly braces).
-            </summary>
-            <param name="nodes">Nodes to group.</param>
-            <returns>Group node wrapping the given nodes in an array.</returns>
-        </member>
-        <member name="M:Formulacrum.Common.Formula">
-            <summary>
-            Returns a unary operator node for the formula operator (=).
-            </summary>
-            <returns>New operator node.</returns>
-        </member>
-        <member name="M:Formulacrum.Common.Formula(Formulacrum.Nodes.Node)">
-            <summary>
-            Returns a binary operator node for the formula operator, with the given body.
-            </summary>
-            <returns>New operator node.</returns>
-            <param name="body">Formula body</param>
-        </member>
-        <member name="M:Formulacrum.Common.String(System.String)">
-            <summary>
-            Returns a node containing a string literal.
-            </summary>
-            <param name="value">String literal.</param>
-            <returns>Node containing string literal.</returns>
-        </member>
-        <member name="M:Formulacrum.Common.Int(System.Int32)">
-            <summary>
-            Returns a node containing an integer literal.
-            </summary>
-            <param name="value">Integer literal.</param>
-            <returns>Node containing integer literal.</returns>
-        </member>
-        <member name="M:Formulacrum.Common.Decimal(System.Decimal,System.String)">
-            <summary>
-            Returns a node containing a decimal literal.
-            </summary>
-            <param name="value">Decimal literal.</param>
-            <param name="format">Format string.</param>
-            <returns>Node containing decimal literal.</returns>
-        </member>
-        <member name="M:Formulacrum.Common.Double(System.Double,System.String)">
-            <summary>
-            Returns a node containing a floating-point literal.
-            </summary>
-            <param name="value">Floating-point literal.</param>
-            <param name="format">Format string.</param>
-            <returns>Node containing floating-point literal.</returns>
-        </member>
-        <member name="M:Formulacrum.Common.Bool(System.Boolean)">
-            <summary>
-            Returns a node containing a boolean literal.
-            </summary>
-            <param name="value">Boolean literal.</param>
-            <returns>Node containing boolean literal.</returns>
-        </member>
-        <member name="T:Formulacrum.Logic">
-            <summary>
-            Factory for nodes representing logical functions and operators.
-            </summary>
-        </member>
-        <member name="M:Formulacrum.Logic.EqualTo">
-            <summary>
-            Returns a binary operator node for equality comparison.
-            </summary>
-            <returns>New operator node.</returns>
-        </member>
-        <member name="M:Formulacrum.Logic.EqualTo(Formulacrum.Nodes.Node,Formulacrum.Nodes.Node)">
-            <summary>
-            Returns a binary operator node for equality comparison, with the given arguments.
-            </summary>
-            <returns>New operator node.</returns>
-            <param name="arg1">First argument.</param>
-            <param name="arg2">Second argument.</param>
-        </member>
-        <member name="M:Formulacrum.Logic.NotEqual">
-            <summary>
-            Returns a binary operator node for inequality comparison.
-            </summary>
-            <returns>New operator node.</returns>
-        </member>
-        <member name="M:Formulacrum.Logic.NotEqual(Formulacrum.Nodes.Node,Formulacrum.Nodes.Node)">
-            <summary>
-            Returns a binary operator node for inequality comparison, with the given arguments.
-            </summary>
-            <returns>New operator node.</returns>
-            <param name="arg1">First argument.</param>
-            <param name="arg2">Second argument.</param>
-        </member>
-        <member name="M:Formulacrum.Logic.LessThan">
-            <summary>
-            Returns a binary operator node for less-than comparison.
-            </summary>
-            <returns>New operator node.</returns>
-        </member>
-        <member name="M:Formulacrum.Logic.LessThan(Formulacrum.Nodes.Node,Formulacrum.Nodes.Node)">
-            <summary>
-            Returns a binary operator node for less-than comparison, with the given arguments.
-            </summary>
-            <returns>New operator node.</returns>
-            <param name="arg1">First argument.</param>
-            <param name="arg2">Second argument.</param>
-        </member>
-        <member name="M:Formulacrum.Logic.LessOrEqual">
-            <summary>
-            Returns a binary operator node for less-than-or-equal-to comparison.
-            </summary>
-            <returns>New operator node.</returns>
-        </member>
-        <member name="M:Formulacrum.Logic.LessOrEqual(Formulacrum.Nodes.Node,Formulacrum.Nodes.Node)">
-            <summary>
-            Returns a binary operator node for less-than-or-equal-to comparison, with the given arguments.
-            </summary>
-            <returns>New operator node.</returns>
-            <param name="arg1">First argument.</param>
-            <param name="arg2">Second argument.</param>
-        </member>
-        <member name="M:Formulacrum.Logic.GreaterThan">
-            <summary>
-            Returns a binary operator node for greater-than comparison.
-            </summary>
-            <returns>New operator node.</returns>
-        </member>
-        <member name="M:Formulacrum.Logic.GreaterThan(Formulacrum.Nodes.Node,Formulacrum.Nodes.Node)">
-            <summary>
-            Returns a binary operator node for greater-than comparison, with the given arguments.
-            </summary>
-            <returns>New operator node.</returns>
-            <param name="arg1">First argument.</param>
-            <param name="arg2">Second argument.</param>
-        </member>
-        <member name="M:Formulacrum.Logic.GreaterOrEqual">
-            <summary>
-            Returns a binary operator node for greater-than-or-equal-to comparison.
-            </summary>
-            <returns>New operator node.</returns>
-        </member>
-        <member name="M:Formulacrum.Logic.GreaterOrEqual(Formulacrum.Nodes.Node,Formulacrum.Nodes.Node)">
-            <summary>
-            Returns a binary operator node for greater-than-or-equal-to comparison, with the given arguments.
-            </summary>
-            <returns>New operator node.</returns>
-            <param name="arg1">First argument.</param>
-            <param name="arg2">Second argument.</param>
-        </member>
-        <member name="M:Formulacrum.Logic.IsBlank">
-            <summary>
-            Returns new function node for the <c>ISBLANK</c> function.
-            </summary>
-            <returns>New function node.</returns>
-            <remarks><c>ISBLANK</c> returns <c>TRUE</c> if the value is blank.</remarks>
-        </member>
-        <member name="M:Formulacrum.Logic.IsBlank(Formulacrum.Nodes.Node)">
-            <summary>
-            Returns new function node for the <c>ISBLANK</c> function, and assigns the given argument.
-            </summary>
-            <param name="value">Node representing value to be tested.</param>
-            <returns>New function node.</returns>
-            <remarks><c>ISBLANK</c> returns <c>TRUE</c> if the value is blank.</remarks>
-        </member>
-        <member name="M:Formulacrum.Logic.IsError">
-            <summary>
-            Returns new function node for the <c>ISERROR</c> function.
-            </summary>
-            <returns>New function node.</returns>
-            <remarks><c>ISERROR</c> returns <c>TRUE</c> if value is any error value.</remarks>
-        </member>
-        <member name="M:Formulacrum.Logic.IsError(Formulacrum.Nodes.Node)">
-            <summary>
-            Returns new function node for the <c>ISERROR</c> function, and assigns the given argument.
-            </summary>
-            <param name="value">Node representing value to be tested.</param>
-            <returns>New function node.</returns>
-            <remarks><c>ISERROR</c> returns <c>TRUE</c> if value is any error value.</remarks>
-        </member>
-        <member name="M:Formulacrum.Logic.Not">
-            <summary>
-            Returns a function node for the <c>NOT</c> function.
-            </summary>
-            <returns>New function node.</returns>
-            <remarks><c>NOT</c> reverses the logic of its argument.</remarks>
-        </member>
-        <member name="M:Formulacrum.Logic.Not(Formulacrum.Nodes.Node)">
-            <summary>
-            Returns a function node for the <c>NOT</c> function, and assigns the given argument.
-            </summary>
-            <param name="value">Node representing value to reverse.</param>
-            <returns>New function node.</returns>
-            <remarks><c>NOT</c> reverses the logic of its argument.</remarks>
-        </member>
-        <member name="M:Formulacrum.Logic.And(Formulacrum.Nodes.Node[])">
-            <summary>
-            Returns a function node for the <c>AND</c> function, with the given arguments.
-            </summary>
-            <param name="args">Arguments.</param>
-            <returns>New function node.</returns>
-            <remarks><c>AND</c> returns <c>TRUE</c> if all of its arguments are <c>TRUE</c>.</remarks>
-        </member>
-        <member name="M:Formulacrum.Logic.Or(Formulacrum.Nodes.Node[])">
-            <summary>
-            Returns a function node for the <c>OR</c> function, with the given arguments.
-            </summary>
-            <param name="args">Arguments.</param>
-            <returns>New function node.</returns>
-            <remarks><c>OR</c> returns <c>TRUE</c> if any argument is <c>TRUE</c>.</remarks>
-        </member>
-        <member name="M:Formulacrum.Logic.Xor(Formulacrum.Nodes.Node[])">
-            <summary>
-            Returns a function node for the <c>XOR</c> function, with the given arguments.
-            </summary>
-            <param name="args">Arguments.</param>
-            <returns>New function node.</returns>
-            <remarks><c>XOR</c> returns a logical exclusive <c>OR</c> of all arguments.
-            This function was introduced with Excel 2013.</remarks>
-        </member>
-        <member name="M:Formulacrum.Logic.If">
-            <summary>
-            Returns a function node for the <c>IF</c> function.
-            </summary>
-            <returns>New function node.</returns>
-            <remarks><c>IF</c> specifies a logical test to perform.</remarks>
-        </member>
-        <member name="M:Formulacrum.Logic.If(Formulacrum.Nodes.Node,Formulacrum.Nodes.Node)">
-            <summary>
-            Returns a function node for the <c>IF</c> function, with the given test and <c>TRUE</c> value;
-            <c>FALSE</c> value is left unassigned.
-            </summary>
-            <param name="test">Node representing a logical test.</param>
-            <param name="trueValue">Node representing result if test is <c>TRUE</c>.</param>
-            <returns>New function node.</returns>
-            <remarks><c>IF</c> specifies a logical test to perform.</remarks>
-        </member>
-        <member name="M:Formulacrum.Logic.If(Formulacrum.Nodes.Node,Formulacrum.Nodes.Node,Formulacrum.Nodes.Node)">
-            <summary>
-            Returns a function node for the <c>IF</c> function, with the given test and <c>TRUE</c> value;
-            <c>FALSE</c> value is left unassigned.
-            </summary>
-            <param name="test">Node representing a logical test.</param>
-            <param name="trueValue">Node representing result if test is <c>TRUE</c>.</param>
-            <param name="falseValue">Node representing result if test is <c>FALSE</c>.</param>
-            <returns>New function node.</returns>
-            <remarks><c>IF</c> specifies a logical test to perform.</remarks>
-        </member>
-        <member name="M:Formulacrum.Logic.IfError">
-            <summary>
-            Returns a function node for the <c>IFERROR</c> function.
-            </summary>
-            <returns>New function node.</returns>
-            <remarks><c>IFERROR</c> returns a value you specify if a formula evaluates to an error;
-            otherwise, returns the result of the formula.</remarks>
-        </member>
-        <member name="M:Formulacrum.Logic.IfError(Formulacrum.Nodes.Node,Formulacrum.Nodes.Node)">
-            <summary>
-            Returns a function node for the <c>IFERROR</c> function, and assigns the given arguments.
-            </summary>
-            <param name="value">Expression that may result in error.</param>
-            <param name="errorValue">Expression to return if <paramref name="value"/> results in an error.</param>
-            <returns>New function node.</returns>
-            <remarks><c>IFERROR</c> returns a value you specify if a formula evaluates to an error;
-            otherwise, returns the result of the formula.</remarks>
-        </member>
-        <member name="T:Formulacrum.Math">
-            <summary>
-            Factory for nodes representing math functions and operators.
-            </summary>
-        </member>
-        <member name="M:Formulacrum.Math.Abs">
-            <summary>
-            Returns a function node for the <c>ABS</c> function.
-            </summary>
-            <returns>New function node.</returns>
-            <remarks><c>ABS</c> returns the absolute value of a number.</remarks>
-        </member>
-        <member name="M:Formulacrum.Math.Abs(Formulacrum.Nodes.Node)">
-            <summary>
-            Returns a function node for the <c>ABS</c> function, and assigns the given argument.
-            </summary>
-            <param name="value">Node representing value.</param>
-            <returns>New function node.</returns>
-            <remarks><c>ABS</c> returns the absolute value of a number.</remarks>
-        </member>
-        <member name="M:Formulacrum.Math.Ceiling">
-            <summary>
-            Returns a function node for the <c>CEILING</c> function.
-            </summary>
-            <returns>New function node.</returns>
-            <remarks><c>CEILING</c> rounds a number up, to the nearest integer
-            or to the nearest multiple of significance.</remarks>
-        </member>
-        <member name="M:Formulacrum.Math.Ceiling(Formulacrum.Nodes.Node,Formulacrum.Nodes.Node)">
-            <summary>
-            Returns a function node for the <c>CEILING</c> function.
-            </summary>
-            <param name="number">Node representing number to round.</param>
-            <param name="significance">Node representing multiple of significance.</param>
-            <returns>New function node.</returns>
-            <remarks><c>CEILING</c> rounds a number up, to the nearest integer
-            or to the nearest multiple of significance.</remarks>
-        </member>
-        <member name="M:Formulacrum.Math.Sum(Formulacrum.Nodes.Node[])">
-            <summary>
-            Returns a function node for the <c>SUM</c> function, and assigns the given arguments.
-            </summary>
-            <param name="args">Arguments.</param>
-            <returns>New function node.</returns>
-            <remarks><c>SUM</c> returns the average of its arguments.</remarks>
-        </member>
-        <member name="M:Formulacrum.Math.Add">
-            <summary>
-            Returns a binary operator node for addition.
-            </summary>
-            <returns>New operator node.</returns>
-        </member>
-        <member name="M:Formulacrum.Math.Add(Formulacrum.Nodes.Node,Formulacrum.Nodes.Node)">
-            <summary>
-            Returns a binary operator node for addition, with the given arguments.
-            </summary>
-            <returns>New operator node.</returns>
-            <param name="arg1">First argument.</param>
-            <param name="arg2">Second argument.</param>
-        </member>
-        <member name="M:Formulacrum.Math.Subtract">
-            <summary>
-            Returns a binary operator node for subtraction.
-            </summary>
-            <returns>New operator node.</returns>
-        </member>
-        <member name="M:Formulacrum.Math.Subtract(Formulacrum.Nodes.Node,Formulacrum.Nodes.Node)">
-            <summary>
-            Returns a binary operator node for subtraction, with the given arguments.
-            </summary>
-            <returns>New operator node.</returns>
-            <param name="arg1">First argument.</param>
-            <param name="arg2">Second argument.</param>
-        </member>
-        <member name="M:Formulacrum.Math.Multiply">
-            <summary>
-            Returns a binary operator node for multiplication.
-            </summary>
-            <returns>New operator node.</returns>
-        </member>
-        <member name="M:Formulacrum.Math.Multiply(Formulacrum.Nodes.Node,Formulacrum.Nodes.Node)">
-            <summary>
-            Returns a binary operator node for multiplication, with the given arguments.
-            </summary>
-            <returns>New operator node.</returns>
-            <param name="arg1">First argument.</param>
-            <param name="arg2">Second argument.</param>
-        </member>
-        <member name="M:Formulacrum.Math.Divide">
-            <summary>
-            Returns a binary operator node for division.
-            </summary>
-            <returns>New operator node.</returns>
-        </member>
-        <member name="M:Formulacrum.Math.Divide(Formulacrum.Nodes.Node,Formulacrum.Nodes.Node)">
-            <summary>
-            Returns a binary operator node for division, with the given arguments.
-            </summary>
-            <returns>New operator node.</returns>
-            <param name="arg1">First argument.</param>
-            <param name="arg2">Second argument.</param>
-        </member>
-        <member name="M:Formulacrum.Math.Exponent">
-            <summary>
-            Returns a binary operator node for exponentiation.
-            </summary>
-            <returns>New operator node.</returns>
-        </member>
-        <member name="M:Formulacrum.Math.Exponent(Formulacrum.Nodes.Node,Formulacrum.Nodes.Node)">
-            <summary>
-            Returns a binary operator node for exponentiation, with the given arguments.
-            </summary>
-            <returns>New operator node.</returns>
-            <param name="arg1">First argument.</param>
-            <param name="arg2">Second argument.</param>
-        </member>
-        <member name="M:Formulacrum.Math.Negate">
-            <summary>
-            Returns a unary operator node for negation.
-            </summary>
-            <returns>New operator node.</returns>
-        </member>
-        <member name="M:Formulacrum.Math.Negate(Formulacrum.Nodes.Node)">
-            <summary>
-            Returns a unary operator node for negation, with the given argument.
-            </summary>
-            <returns>New operator node.</returns>
-            <param name="arg">Argument.</param>
-        </member>
-        <member name="M:Formulacrum.Math.Percent">
-            <summary>
-            Returns a unary operator node for percent.
-            </summary>
-            <returns>New operator node.</returns>
-        </member>
-        <member name="M:Formulacrum.Math.Percent(Formulacrum.Nodes.Node)">
-            <summary>
-            Returns a unary operator node for percent, with the given argument.
-            </summary>
-            <returns>New operator node.</returns>
-            <param name="arg">Argument.</param>
-        </member>
-        <member name="M:Formulacrum.Math.Average(Formulacrum.Nodes.Node[])">
-            <summary>
-            Returns a function node for the <c>AVERAGE</c> function, and assigns the given arguments.
-            </summary>
-            <param name="args">Arguments.</param>
-            <returns>New function node.</returns>
-            <remarks><c>AVERAGE</c> returns the average of its arguments.</remarks>
-        </member>
-        <member name="M:Formulacrum.Math.Count(Formulacrum.Nodes.Node[])">
-            <summary>
-            Returns a function node for the <c>COUNT</c> function, and assigns the given arguments.
-            </summary>
-            <param name="args">Arguments.</param>
-            <returns>New function node.</returns>
-            <remarks><c>COUNT</c> counts how many numbers are in the list of arguments.</remarks>
-        </member>
-        <member name="M:Formulacrum.Math.CountA(Formulacrum.Nodes.Node[])">
-            <summary>
-            Returns a function node for the <c>COUNTA</c> function, and assigns the given arguments.
-            </summary>
-            <param name="args">Arguments.</param>
-            <returns>New function node.</returns>
-            <remarks><c>COUNTA</c> counts how many values are in the list of arguments.</remarks>
-        </member>
-        <member name="M:Formulacrum.Math.Max(Formulacrum.Nodes.Node[])">
-            <summary>
-            Returns a function node for the <c>MAX</c> function, and assigns the given arguments.
-            </summary>
-            <param name="args">Arguments.</param>
-            <returns>New function node.</returns>
-            <remarks><c>MAX</c> returns the maximum value in a list of arguments.</remarks>
-        </member>
-        <member name="M:Formulacrum.Math.Min(Formulacrum.Nodes.Node[])">
-            <summary>
-            Returns a function node for the <c>MIN</c> function, and assigns the given arguments.
-            </summary>
-            <param name="args">Arguments.</param>
-            <returns>New function node.</returns>
-            <remarks><c>MIN</c> returns the minimum value in a list of arguments.</remarks>
-        </member>
-        <member name="T:Formulacrum.TextFactory">
-            <summary>
-            Factory for nodes representing text functions and operators.
-            </summary>
-            <remarks>Name is longer than other factories to avoid ambiguity with <c>TEXT</c> function.</remarks>
-        </member>
-        <member name="M:Formulacrum.TextFactory.Char">
-            <summary>
-            Returns a function node for the <c>CHAR</c> function.
-            </summary>
-            <returns>New function node.</returns>
-            <remarks><c>CHAR</c> returns the character specified by the code number.</remarks>
-        </member>
-        <member name="M:Formulacrum.TextFactory.Char(Formulacrum.Nodes.Node)">
-            <summary>
-            Returns a function node for the <c>CHAR</c> function, with the given argument.
-            </summary>
-            <param name="number">Node representing ASCII character code.</param>
-            <returns>New function node.</returns>
-            <remarks><c>CHAR</c> returns the character specified by the code number.</remarks>
-        </member>
-        <member name="M:Formulacrum.TextFactory.Code">
-            <summary>
-            Returns a function node for the <c>CODE</c> function.
-            </summary>
-            <returns>New function node.</returns>
-            <remarks><c>CODE</c> returns a numeric code for the first character in a text string.</remarks>
-        </member>
-        <member name="M:Formulacrum.TextFactory.Code(Formulacrum.Nodes.Node)">
-            <summary>
-            Returns a function node for the <c>CODE</c> function, with the given argument.
-            </summary>
-            <param name="text">Node representing text.</param>
-            <returns>New function node.</returns>
-            <remarks><c>CODE</c> returns a numeric code for the first character in a text string.</remarks>
-        </member>
-        <member name="M:Formulacrum.TextFactory.Fixed">
-            <summary>
-            Returns a function node for the <c>FIXED</c> function.
-            </summary>
-            <returns>New function node.</returns>
-            <remarks><c>FIXED</c> formats a number as text with a fixed number of decimals.</remarks>
-        </member>
-        <member name="M:Formulacrum.TextFactory.Fixed(Formulacrum.Nodes.Node)">
-            <summary>
-            Returns a function node for the <c>FIXED</c> function, and assigns the given argument.
-            </summary>
-            <param name="number">Node representing number to format.</param>
-            <returns>New function node.</returns>
-            <remarks><c>FIXED</c> formats a number as text with a fixed number of decimals.</remarks>
-        </member>
-        <member name="M:Formulacrum.TextFactory.Fixed(Formulacrum.Nodes.Node,Formulacrum.Nodes.Node)">
-            <summary>
-            Returns a function node for the <c>FIXED</c> function, and assigns the given arguments.
-            </summary>
-            <param name="number">Node representing number to format.</param>
-            <param name="decimals">Node representing number of decimal places.</param>
-            <returns>New function node.</returns>
-            <remarks><c>FIXED</c> formats a number as text with a fixed number of decimals.</remarks>
-        </member>
-        <member name="M:Formulacrum.TextFactory.Fixed(Formulacrum.Nodes.Node,Formulacrum.Nodes.Node,Formulacrum.Nodes.Node)">
-            <summary>
-            Returns a function node for the <c>FIXED</c> function, and assigns the give arguments.
-            </summary>
-            <param name="number">Node representing number to format.</param>
-            <param name="decimals">Node representing number of decimal places.</param>
-            <param name="noCommas">Node representing whether commas will be displayed or not.</param>
-            <returns>New function node.</returns>
-            <remarks><c>FIXED</c> formats a number as text with a fixed number of decimals.</remarks>
-        </member>
-        <member name="M:Formulacrum.TextFactory.Text">
-            <summary>
-            Returns a function node for the <c>TEXT</c> function.
-            </summary>
-            <returns>New function node.</returns>
-            <remarks><c>TEXT</c> returns a numeric code for the first character in a text string.</remarks>
-        </member>
-        <member name="M:Formulacrum.TextFactory.Text(Formulacrum.Nodes.Node,Formulacrum.Nodes.Node)">
-            <summary>
-            Returns a function node for the <c>TEXT</c> function, and assigns the given arguments.
-            </summary>
-            <param name="value">Node representing value to convert to text.</param>
-            <param name="format">Node representing format string.</param>
-            <returns>New function node.</returns>
-            <remarks><c>TEXT</c> returns a numeric code for the first character in a text string.</remarks>
-        </member>
-        <member name="M:Formulacrum.TextFactory.Value">
-            <summary>
-            Returns a function node for the <c>VALUE</c> function.
-            </summary>
-            <returns>New function node.</returns>
-            <remarks><c>VALUE</c> converts a text argument to a number.</remarks>
-        </member>
-        <member name="M:Formulacrum.TextFactory.Value(Formulacrum.Nodes.Node)">
-            <summary>
-            Returns a function node for the <c>VALUE</c> function, with the given argument.
-            </summary>
-            <param name="text">Node representing text.</param>
-            <returns>New function node.</returns>
-            <remarks><c>VALUE</c> converts a text argument to a number.</remarks>
-        </member>
-        <member name="M:Formulacrum.TextFactory.Left">
-            <summary>
-            Returns a function node for the <c>LEFT</c> function.
-            </summary>
-            <returns>New function node.</returns>
-            <remarks><c>LEFT</c> returns the leftmost characters from a text value.</remarks>
-        </member>
-        <member name="M:Formulacrum.TextFactory.Left(Formulacrum.Nodes.Node)">
-            <summary>
-            Returns a function node for the <c>LEFT</c> function, and assigns the given argument.
-            </summary>
-            <param name="text">Node representing text.</param>
-            <returns>New function node.</returns>
-            <remarks><c>LEFT</c> returns the leftmost characters from a text value.</remarks>
-        </member>
-        <member name="M:Formulacrum.TextFactory.Left(Formulacrum.Nodes.Node,Formulacrum.Nodes.Node)">
-            <summary>
-            Returns a function node for the <c>LEFT</c> function, and assigns the given arguments.
-            </summary>
-            <param name="text">Node representing text.</param>
-            <param name="length">Node representing number of characters to return.</param>
-            <returns>New function node.</returns>
-            <remarks><c>LEFT</c> returns the leftmost characters from a text value.</remarks>
-        </member>
-        <member name="M:Formulacrum.TextFactory.Right">
-            <summary>
-            Returns a function node for the <c>RIGHT</c> function.
-            </summary>
-            <returns>New function node.</returns>
-            <remarks><c>RIGHT</c> returns the rightmost characters from a text value.</remarks>
-        </member>
-        <member name="M:Formulacrum.TextFactory.Right(Formulacrum.Nodes.Node)">
-            <summary>
-            Returns a function node for the <c>RIGHT</c> function, and assigns the given argument.
-            </summary>
-            <param name="text">Node representing text.</param>
-            <returns>New function node.</returns>
-            <remarks><c>RIGHT</c> returns the rightmost characters from a text value.</remarks>
-        </member>
-        <member name="M:Formulacrum.TextFactory.Right(Formulacrum.Nodes.Node,Formulacrum.Nodes.Node)">
-            <summary>
-            Returns a function node for the <c>RIGHT</c> function, and assigns the given arguments.
-            </summary>
-            <param name="text">Node representing text.</param>
-            <param name="length">Node representing number of characters to return.</param>
-            <returns>New function node.</returns>
-            <remarks><c>RIGHT</c> returns the rightmost characters from a text value.</remarks>
-        </member>
-        <member name="M:Formulacrum.TextFactory.Mid">
-            <summary>
-            Returns a function node for the <c>MID</c> function.
-            </summary>
-            <returns>New function node.</returns>
-            <remarks><c>MID</c> returns a specific number of characters from a
-            text string starting at the position you specify.</remarks>
-        </member>
-        <member name="M:Formulacrum.TextFactory.Mid(Formulacrum.Nodes.Node,Formulacrum.Nodes.Node)">
-            <summary>
-            Returns a function node for the <c>MID</c> function, and assigns the given arguments.
-            </summary>
-            <param name="text">Node representing text.</param>
-            <param name="start">Node representing index to start at.</param>
-            <returns>New function node.</returns>
-            <remarks><c>MID</c> returns a specific number of characters from a
-            text string starting at the position you specify.</remarks>
-        </member>
-        <member name="M:Formulacrum.TextFactory.Mid(Formulacrum.Nodes.Node,Formulacrum.Nodes.Node,Formulacrum.Nodes.Node)">
-            <summary>
-            Returns a function node for the <c>MID</c> function, and assigns the given arguments.
-            </summary>
-            <param name="text">Node representing text.</param>
-            <param name="start">Node representing index to start at.</param>
-            <param name="length">Node representing number of characters to return.</param>
-            <returns>New function node.</returns>
-            <remarks><c>MID</c> returns a specific number of characters from a
-            text string starting at the position you specify.</remarks>
-        </member>
-        <member name="M:Formulacrum.TextFactory.Replace">
-            <summary>
-            Returns a function node for the <c>REPLACE</c> function.
-            </summary>
-            <returns>New function node.</returns>
-            <remarks><c>REPLACE</c> replaces characters within text.</remarks>
-        </member>
-        <member name="M:Formulacrum.TextFactory.Replace(Formulacrum.Nodes.Node,Formulacrum.Nodes.Node,Formulacrum.Nodes.Node,Formulacrum.Nodes.Node)">
-            <summary>
-            Returns a function node for the <c>REPLACE</c> function, and assigns the given arguments.
-            </summary>
-            <param name="oldText">Node representing text to modify.</param>
-            <param name="start">Node representing index to start replacing at.</param>
-            <param name="length">Node representing number of characters to replace.</param>
-            <param name="newText">Node representing text to insert into <paramref name="oldText"/>.</param>
-            <returns>New function node.</returns>
-            <remarks><c>REPLACE</c> replaces characters within text.</remarks>
-        </member>
-        <member name="M:Formulacrum.TextFactory.Substitute">
-            <summary>
-            Returns a function node for the <c>SUBSTITUTE</c> function.
-            </summary>
-            <returns>New function node.</returns>
-            <remarks><c>SUBSTITUTE</c> substitutes new text for old text in a text string.</remarks>
-        </member>
-        <member name="M:Formulacrum.TextFactory.Substitute(Formulacrum.Nodes.Node,Formulacrum.Nodes.Node,Formulacrum.Nodes.Node)">
-            <summary>
-            Returns a function node for the <c>SUBSTITUTE</c> function, and assigns the given arguments.
-            </summary>
-            <param name="text">Node representing text to modify.</param>
-            <param name="oldText">Node representing text to remove.</param>
-            <param name="newText">Node representing text to insert.</param>
-            <returns>New function node.</returns>
-            <remarks><c>SUBSTITUTE</c> substitutes new text for old text in a text string.</remarks>
-        </member>
-        <member name="M:Formulacrum.TextFactory.Substitute(Formulacrum.Nodes.Node,Formulacrum.Nodes.Node,Formulacrum.Nodes.Node,Formulacrum.Nodes.Node)">
-            <summary>
-            Returns a function node for the <c>SUBSTITUTE</c> function, and assigns the given arguments.
-            </summary>
-            <param name="text">Node representing text to modify.</param>
-            <param name="oldText">Node representing text to remove.</param>
-            <param name="newText">Node representing text to insert.</param>
-            <param name="instance">Node representing number of instance of <paramref name="oldText"/> to replace.</param>
-            <returns>New function node.</returns>
-            <remarks><c>SUBSTITUTE</c> substitutes new text for old text in a text string.</remarks>
-        </member>
-        <member name="M:Formulacrum.TextFactory.Lower">
-            <summary>
-            Returns a function node for the <c>LOWER</c> function.
-            </summary>
-            <returns>New function node.</returns>
-            <remarks><c>LOWER</c> converts text to lowercase.</remarks>
-        </member>
-        <member name="M:Formulacrum.TextFactory.Lower(Formulacrum.Nodes.Node)">
-            <summary>
-            Returns a function node for the <c>LOWER</c> function, and assigns the given argument.
-            </summary>
-            <param name="text">Node representing text.</param>
-            <returns>New function node.</returns>
-            <remarks><c>LOWER</c> converts text to lowercase.</remarks>
-        </member>
-        <member name="M:Formulacrum.TextFactory.Proper">
-            <summary>
-            Returns a function node for the <c>PROPER</c> function.
-            </summary>
-            <returns>New function node.</returns>
-            <remarks><c>PROPER</c> capitalizes the first letter in each word of a text value.</remarks>
-        </member>
-        <member name="M:Formulacrum.TextFactory.Proper(Formulacrum.Nodes.Node)">
-            <summary>
-            Returns a function node for the <c>LOWER</c> function, and assigns the given argument.
-            </summary>
-            <param name="text">Node representing text.</param>
-            <returns>New function node.</returns>
-            <remarks><c>PROPER</c> capitalizes the first letter in each word of a text value.</remarks>
-        </member>
-        <member name="M:Formulacrum.TextFactory.Upper">
-            <summary>
-            Returns a function node for the <c>UPPER</c> function.
-            </summary>
-            <returns>New function node.</returns>
-            <remarks><c>UPPER</c> converts text to uppercase.</remarks>
-        </member>
-        <member name="M:Formulacrum.TextFactory.Upper(Formulacrum.Nodes.Node)">
-            <summary>
-            Returns a function node for the <c>UPPER</c> function, and assigns the given argument.
-            </summary>
-            <param name="text">Node representing text.</param>
-            <returns>New function node.</returns>
-            <remarks><c>UPPER</c> converts text to uppercase.</remarks>
-        </member>
-        <member name="M:Formulacrum.TextFactory.Clean">
-            <summary>
-            Returns a function node for the <c>CLEAN</c> function.
-            </summary>
-            <returns>New function node.</returns>
-            <remarks><c>CLEAN</c> removes all non-printable characters from text.</remarks>
-        </member>
-        <member name="M:Formulacrum.TextFactory.Clean(Formulacrum.Nodes.Node)">
-            <summary>
-            Returns a function node for the <c>CLEAN</c> function.
-            </summary>
-            <param name="text">Node representing text.</param>
-            <returns>New function node.</returns>
-            <remarks><c>CLEAN</c> removes all non-printable characters from text.</remarks>
-        </member>
-        <member name="M:Formulacrum.TextFactory.Trim">
-            <summary>
-            Returns a function node for the <c>TRIM</c> function.
-            </summary>
-            <returns>New function node.</returns>
-            <remarks><c>TRIM</c> removes spaces from text.</remarks>
-        </member>
-        <member name="M:Formulacrum.TextFactory.Trim(Formulacrum.Nodes.Node)">
-            <summary>
-            Returns a function node for the <c>TRIM</c> function, and assigns the given argument.
-            </summary>
-            <param name="text">Node representing text.</param>
-            <returns>New function node.</returns>
-            <remarks><c>TRIM</c> removes spaces from text.</remarks>
-        </member>
-        <member name="M:Formulacrum.TextFactory.Concatenate(Formulacrum.Nodes.Node[])">
-            <summary>
-            Returns a function node for the <c>CONCATENATE</c> function, and assigns the given argument.
-            </summary>
-            <param name="args">Arguments.</param>
-            <returns>New function node.</returns>
-            <remarks><c>CONCATENATE</c> joins several text items into one text item.</remarks>
-        </member>
-        <member name="M:Formulacrum.TextFactory.Rept">
-            <summary>
-            Returns a function node for the <c>REPT</c> function.
-            </summary>
-            <returns>New function node.</returns>
-            <remarks><c>REPT</c> repeats text a given number of times.</remarks>
-        </member>
-        <member name="M:Formulacrum.TextFactory.Rept(Formulacrum.Nodes.Node,Formulacrum.Nodes.Node)">
-            <summary>
-            Returns a function node for the <c>REPT</c> function, and assigns the given arguments.
-            </summary>
-            <param name="text">Node representing text.</param>
-            <param name="times">Node representing number of times to repeat.</param>
-            <returns>New function node.</returns>
-            <remarks><c>REPT</c> repeats text a given number of times.</remarks>
-        </member>
-        <member name="M:Formulacrum.TextFactory.Len">
-            <summary>
-            Returns a function node for the <c>LEN</c> function.
-            </summary>
-            <returns>New function node.</returns>
-            <remarks><c>LEN</c> returns the number of characters in a text string.</remarks>
-        </member>
-        <member name="M:Formulacrum.TextFactory.Len(Formulacrum.Nodes.Node)">
-            <summary>
-            Returns a function node for the <c>LEN</c> function, and assigns the given argument.
-            </summary>
-            <param name="text">Node representing text.</param>
-            <returns>New function node.</returns>
-            <remarks><c>LEN</c> returns the number of characters in a text string.</remarks>
-        </member>
-        <member name="M:Formulacrum.TextFactory.Find">
-            <summary>
-            Returns a function node for the <c>FIND</c> function.
-            </summary>
-            <returns>New function node.</returns>
-            <remarks><c>FIND</c> finds one text value within another (case-sensitive).</remarks>
-        </member>
-        <member name="M:Formulacrum.TextFactory.Find(Formulacrum.Nodes.Node,Formulacrum.Nodes.Node)">
-            <summary>
-            Returns a function node for the <c>FIND</c> function, and assigns the given arguments.
-            </summary>
-            <param name="findText">Node representing text to find.</param>
-            <param name="withinText">Node representing text to look in.</param>
-            <returns>New function node.</returns>
-            <remarks><c>FIND</c> finds one text value within another (case-sensitive).</remarks>
-        </member>
-        <member name="M:Formulacrum.TextFactory.Find(Formulacrum.Nodes.Node,Formulacrum.Nodes.Node,Formulacrum.Nodes.Node)">
-            <summary>
-            Returns a function node for the <c>FIND</c> function, and assigns the given arguments.
-            </summary>
-            <param name="findText">Node representing text to find.</param>
-            <param name="withinText">Node representing text to look in.</param>
-            <param name="start">Node representing index to start at.</param>
-            <returns>New function node.</returns>
-            <remarks><c>FIND</c> finds one text value within another (case-sensitive).</remarks>
-        </member>
-        <member name="M:Formulacrum.TextFactory.Search">
-            <summary>
-            Returns a function node for the <c>SEARCH</c> function.
-            </summary>
-            <returns>New function node.</returns>
-            <remarks><c>SEARCH</c> finds one text value within another (not case-sensitive).</remarks>
-        </member>
-        <member name="M:Formulacrum.TextFactory.Search(Formulacrum.Nodes.Node,Formulacrum.Nodes.Node,Formulacrum.Nodes.Node)">
-            <summary>
-            Returns a function node for the <c>SEARCH</c> function.
-            </summary>
-            <param name="findText">Node representing text to look for.</param>
-            <param name="withinText">Node representing text to look in.</param>
-            <param name="start">Node representing index to start at.</param>
-            <returns>New function node.</returns>
-            <remarks><c>SEARCH</c> finds one text value within another (not case-sensitive).</remarks>
-        </member>
-        <member name="M:Formulacrum.TextFactory.Concat">
-            <summary>
-            Returns a binary operator node for concatenation.
-            </summary>
-            <returns>New operator node.</returns>
-        </member>
-        <member name="M:Formulacrum.TextFactory.Concat(Formulacrum.Nodes.Node,Formulacrum.Nodes.Node)">
-            <summary>
-            Returns a binary operator node for concatenation, with the given arguments.
-            </summary>
-            <returns>New operator node.</returns>
-            <param name="arg1">First argument.</param>
-            <param name="arg2">Second argument.</param>
-        </member>
-        <member name="T:Formulacrum.AbsoluteRefs">
-            <summary>
-            Factory for absolute reference formula nodes.
-            </summary>
-        </member>
-        <member name="M:Formulacrum.AbsoluteRefs.Empty">
-            <summary>
-            Returns absolute reference node with unassigned coordinates.
-            </summary>
-            <returns>New absolute reference node.</returns>
-        </member>
-        <member name="M:Formulacrum.AbsoluteRefs.Cell(Formulacrum.Nodes.IntNode,Formulacrum.Nodes.IntNode)">
-            <summary>
-            Returns absolute reference node with coordinates for the cell at the given row and column.
-            </summary>
-            <param name="row">Row number.</param>
-            <param name="column">Column number.</param>
-            <returns>New absolute reference node.</returns>
-        </member>
-        <member name="M:Formulacrum.AbsoluteRefs.Row(Formulacrum.Nodes.IntNode)">
-            <summary>
-            Returns absolute reference node with coordinates for the row at the give index.
-            </summary>
-            <param name="index">Row number.</param>
-            <returns>New absolute reference node.</returns>
-        </member>
-        <member name="M:Formulacrum.AbsoluteRefs.Rows(Formulacrum.Nodes.IntNode,Formulacrum.Nodes.IntNode)">
-            <summary>
-            Returns absolute reference node with coordinates for the span of rows between the two given indexes.
-            </summary>
-            <param name="top">First row.</param>
-            <param name="bottom">Last row.</param>
-            <returns>New absolute reference node.</returns>
-        </member>
-        <member name="M:Formulacrum.AbsoluteRefs.Column(Formulacrum.Nodes.IntNode)">
-            <summary>
-            Returns absolute reference node with coordinates for the column at the give index.
-            </summary>
-            <param name="index">Column number.</param>
-            <returns>New absolute reference node.</returns>
-        </member>
-        <member name="M:Formulacrum.AbsoluteRefs.Columns(Formulacrum.Nodes.IntNode,Formulacrum.Nodes.IntNode)">
-            <summary>
-            Returns absolute reference node with coordinates for the span of columns between the two given indexes.
-            </summary>
-            <param name="left">First column.</param>
-            <param name="right">Last column.</param>
-            <returns>New absolute reference node.</returns>
-        </member>
-        <member name="M:Formulacrum.AbsoluteRefs.Range(Formulacrum.Nodes.IntNode,Formulacrum.Nodes.IntNode,Formulacrum.Nodes.IntNode,Formulacrum.Nodes.IntNode)">
-            <summary>
-            Returns absolute reference node with the given coordinates.
-            </summary>
-            <param name="top">First row.</param>
-            <param name="left">First column.</param>
-            <param name="bottom">Last row.</param>
-            <param name="right">Last column.</param>
-            <returns>New absolute reference node.</returns>
-        </member>
-        <member name="M:Formulacrum.AbsoluteRefs.Book(System.String)">
-            <summary>
-            Returns a node containing a workbook reference.
-            </summary>
-            <param name="name">Workbook name.</param>
-            <returns>Node containing workbook reference.</returns>
-        </member>
-        <member name="M:Formulacrum.AbsoluteRefs.Sheet(System.String)">
-            <summary>
-            Returns a node containing a worksheet reference.
-            </summary>
-            <param name="name">Worksheet name.</param>
-            <returns>Node containing worksheet reference.</returns>
-        </member>
-        <member name="T:Formulacrum.RelativeRefs">
-            <summary>Factory for relative reference formula nodes.</summary>
-        </member>
-        <member name="M:Formulacrum.RelativeRefs.Empty">
-            <summary>
-            Returns relative reference node with unassigned coordinates.
-            </summary>
-            <returns>New relative reference node.</returns>
-        </member>
-        <member name="M:Formulacrum.RelativeRefs.Cell(Formulacrum.Nodes.IntNode,Formulacrum.Nodes.IntNode)">
-            <summary>
-            Returns relative reference node with coordinates for the cell at the given row and column.
-            </summary>
-            <param name="row">Row number.</param>
-            <param name="column">Column number.</param>
-            <returns>New relative reference node.</returns>
-        </member>
-        <member name="M:Formulacrum.RelativeRefs.Row(Formulacrum.Nodes.IntNode)">
-            <summary>
-            Returns relative reference node with coordinates for the row at the give index.
-            </summary>
-            <param name="index">Row number.</param>
-            <returns>New relative reference node.</returns>
-        </member>
-        <member name="M:Formulacrum.RelativeRefs.Rows(Formulacrum.Nodes.IntNode,Formulacrum.Nodes.IntNode)">
-            <summary>
-            Returns relative reference node with coordinates for the span of rows between the two given indexes.
-            </summary>
-            <param name="top">First row.</param>
-            <param name="bottom">Last row.</param>
-            <returns>New relative reference node.</returns>
-        </member>
-        <member name="M:Formulacrum.RelativeRefs.Column(Formulacrum.Nodes.IntNode)">
-            <summary>
-            Returns relative reference node with coordinates for the column at the give index.
-            </summary>
-            <param name="index">Column number.</param>
-            <returns>New relative reference node.</returns>
-        </member>
-        <member name="M:Formulacrum.RelativeRefs.Columns(Formulacrum.Nodes.IntNode,Formulacrum.Nodes.IntNode)">
-            <summary>
-            Returns relative reference node with coordinates for the span of columns between the two given indexes.
-            </summary>
-            <param name="left">First column.</param>
-            <param name="right">Last column.</param>
-            <returns>New relative reference node.</returns>
-        </member>
-        <member name="M:Formulacrum.RelativeRefs.Range(Formulacrum.Nodes.IntNode,Formulacrum.Nodes.IntNode,Formulacrum.Nodes.IntNode,Formulacrum.Nodes.IntNode)">
-            <summary>
-            Returns relative reference node with the given coordinates.
-            </summary>
-            <param name="top">First row.</param>
-            <param name="left">First column.</param>
-            <param name="bottom">Last row.</param>
-            <param name="right">Last column.</param>
-            <returns>New relative reference node.</returns>
-        </member>
-        <member name="M:Formulacrum.RelativeRefs.Book(System.String)">
-            <summary>
-            Returns a node containing a workbook reference.
-            </summary>
-            <param name="name">Workbook name.</param>
-            <returns>Node containing workbook reference.</returns>
-        </member>
-        <member name="M:Formulacrum.RelativeRefs.Sheet(System.String)">
-            <summary>
-            Returns a node containing a worksheet reference.
-            </summary>
-            <param name="name">Worksheet name.</param>
-            <returns>Node containing worksheet reference.</returns>
         </member>
         <member name="T:Formulacrum.Nodes.NodeExt">
             <summary>
@@ -1781,6 +761,1028 @@
             Returns a new node with indentical properties to this node, but no child nodes assigned.
             </summary>
             <returns>New node with identical properties to this node, but no child nodes assigned.</returns>
+        </member>
+        <member name="M:Formulacrum.CommonImplementation.Aggregate(System.String,Formulacrum.Nodes.Node[])">
+            <summary>
+            Returns a function node with the given name that can take between 1 and
+            <see cref="F:Formulacrum.Nodes.NodeCollection.CountLimit"/> arguments, and assigns the
+            given arguments starting at the first argument index.
+            </summary>
+            <param name="name">Name of function.</param>
+            <param name="args">Arguments to assign. New node will always have room for 1 to
+            <see cref="F:Formulacrum.Nodes.NodeCollection.CountLimit"/> arguments, regardless of how many are assigned.</param>
+            <returns>New function node.</returns>
+            <remarks>New node will always have room for 1 to 30 arguments, regardless
+            of how many are assigned.</remarks>
+        </member>
+        <member name="T:Formulacrum.Common">
+            <summary>
+            Factory for general-purpose nodes.
+            </summary>
+        </member>
+        <member name="M:Formulacrum.Common.Group">
+            <summary>
+            Returns a node for wrapping other nodes in parentheses.
+            </summary>
+            <returns>New node.</returns>
+        </member>
+        <member name="M:Formulacrum.Common.Group(Formulacrum.Nodes.Node[])">
+            <summary>
+            Returns a node wrapping the given nodes in parentheses.
+            </summary>
+            <param name="nodes">Nodes to group.</param>
+            <returns>New node</returns>
+        </member>
+        <member name="M:Formulacrum.Common.Array">
+            <summary>
+            Returns a node for wrapping other nodes in an array (with curly braces).
+            </summary>
+            <returns>New node</returns>
+        </member>
+        <member name="M:Formulacrum.Common.Array(Formulacrum.Nodes.Node[])">
+            <summary>
+            Returns a node wrapping the given nodes in an array (with curly braces).
+            </summary>
+            <param name="nodes">Nodes to group.</param>
+            <returns>New node</returns>
+        </member>
+        <member name="M:Formulacrum.Common.Formula">
+            <summary>
+            Returns a node representing the formula operator (=).
+            </summary>
+            <returns>New node.</returns>
+        </member>
+        <member name="M:Formulacrum.Common.Formula(Formulacrum.Nodes.Node)">
+            <summary>
+            Returns a node representing the formula operator (=), with the given body.
+            </summary>
+            <param name="body">Formula body</param>
+            <returns>New node.</returns>
+        </member>
+        <member name="M:Formulacrum.Common.String(System.String)">
+            <summary>
+            Returns a node representing a string literal.
+            </summary>
+            <param name="value">String literal.</param>
+            <returns>New node</returns>
+        </member>
+        <member name="M:Formulacrum.Common.Int(System.Int32)">
+            <summary>
+            Returns a node representing an integer literal.
+            </summary>
+            <param name="value">Integer literal.</param>
+            <returns>New node</returns>
+        </member>
+        <member name="M:Formulacrum.Common.Decimal(System.Decimal,System.String)">
+            <summary>
+            Returns a node representing a decimal literal.
+            </summary>
+            <param name="value">Decimal literal.</param>
+            <param name="format">Format string.</param>
+            <returns>New node</returns>
+        </member>
+        <member name="M:Formulacrum.Common.Double(System.Double,System.String)">
+            <summary>
+            Returns a node representing a floating-point literal.
+            </summary>
+            <param name="value">Floating-point literal.</param>
+            <param name="format">Format string.</param>
+            <returns>New node</returns>
+        </member>
+        <member name="M:Formulacrum.Common.Bool(System.Boolean)">
+            <summary>
+            Returns a node representing a boolean literal.
+            </summary>
+            <param name="value">Boolean literal.</param>
+            <returns>New node</returns>
+        </member>
+        <member name="T:Formulacrum.Logic">
+            <summary>
+            Factory for nodes representing logical functions and operators.
+            </summary>
+        </member>
+        <member name="M:Formulacrum.Logic.EqualTo">
+            <summary>
+            Returns a node for equality comparison (=).
+            </summary>
+            <returns>New node.</returns>
+        </member>
+        <member name="M:Formulacrum.Logic.EqualTo(Formulacrum.Nodes.Node,Formulacrum.Nodes.Node)">
+            <summary>
+            Returns a node for equality comparison (=), with the given arguments.
+            </summary>
+            <param name="arg1">First argument.</param>
+            <param name="arg2">Second argument.</param>
+            <returns>New node.</returns>
+        </member>
+        <member name="M:Formulacrum.Logic.NotEqual">
+            <summary>
+            Returns a node for inequality comparison (&lt;&gt;).
+            </summary>
+            <returns>New node.</returns>
+        </member>
+        <member name="M:Formulacrum.Logic.NotEqual(Formulacrum.Nodes.Node,Formulacrum.Nodes.Node)">
+            <summary>
+            Returns a node for inequality comparison (&lt;&gt;), with the given arguments.
+            </summary>
+            <param name="arg1">First argument.</param>
+            <param name="arg2">Second argument.</param>
+            <returns>New node.</returns>
+        </member>
+        <member name="M:Formulacrum.Logic.LessThan">
+            <summary>
+            Returns a node for less-than comparison (&lt;).
+            </summary>
+            <returns>New node.</returns>
+        </member>
+        <member name="M:Formulacrum.Logic.LessThan(Formulacrum.Nodes.Node,Formulacrum.Nodes.Node)">
+            <summary>
+            Returns a node for less-than comparison (&lt;), with the given arguments.
+            </summary>
+            <param name="arg1">First argument.</param>
+            <param name="arg2">Second argument.</param>
+            <returns>New node.</returns>
+        </member>
+        <member name="M:Formulacrum.Logic.LessOrEqual">
+            <summary>
+            Returns a node for less-than-or-equal-to comparison (&lt;=).
+            </summary>
+            <returns>New node.</returns>
+        </member>
+        <member name="M:Formulacrum.Logic.LessOrEqual(Formulacrum.Nodes.Node,Formulacrum.Nodes.Node)">
+            <summary>
+            Returns a node for less-than-or-equal-to comparison (&lt;=), with the given arguments.
+            </summary>
+            <param name="arg1">First argument.</param>
+            <param name="arg2">Second argument.</param>
+            <returns>New node.</returns>
+        </member>
+        <member name="M:Formulacrum.Logic.GreaterThan">
+            <summary>
+            Returns a node for greater-than comparison (&gt;).
+            </summary>
+            <returns>New node.</returns>
+        </member>
+        <member name="M:Formulacrum.Logic.GreaterThan(Formulacrum.Nodes.Node,Formulacrum.Nodes.Node)">
+            <summary>
+            Returns a node for greater-than comparison (&gt;), with the given arguments.
+            </summary>
+            <param name="arg1">First argument.</param>
+            <param name="arg2">Second argument.</param>
+            <returns>New node.</returns>
+        </member>
+        <member name="M:Formulacrum.Logic.GreaterOrEqual">
+            <summary>
+            Returns a node for greater-than-or-equal-to comparison (&gt;=).
+            </summary>
+            <returns>New node.</returns>
+        </member>
+        <member name="M:Formulacrum.Logic.GreaterOrEqual(Formulacrum.Nodes.Node,Formulacrum.Nodes.Node)">
+            <summary>
+            Returns a node for greater-than-or-equal-to comparison (&gt;=), with the given arguments.
+            </summary>
+            <param name="arg1">First argument.</param>
+            <param name="arg2">Second argument.</param>
+            <returns>New node.</returns>
+        </member>
+        <member name="M:Formulacrum.Logic.IsBlank">
+            <summary>
+            Returns a node representing the <c>ISBLANK</c> function.
+            </summary>
+            <returns>New node.</returns>
+            <remarks><c>ISBLANK</c> returns <c>TRUE</c> if the value is blank.</remarks>
+        </member>
+        <member name="M:Formulacrum.Logic.IsBlank(Formulacrum.Nodes.Node)">
+            <summary>
+            Returns a node representing the <c>ISBLANK</c> function, and assigns the given argument.
+            </summary>
+            <param name="value">Node representing value to be tested.</param>
+            <returns>New node.</returns>
+            <remarks><c>ISBLANK</c> returns <c>TRUE</c> if the value is blank.</remarks>
+        </member>
+        <member name="M:Formulacrum.Logic.IsError">
+            <summary>
+            Returns a node representing the <c>ISERROR</c> function.
+            </summary>
+            <returns>New node.</returns>
+            <remarks><c>ISERROR</c> returns <c>TRUE</c> if value is any error value.</remarks>
+        </member>
+        <member name="M:Formulacrum.Logic.IsError(Formulacrum.Nodes.Node)">
+            <summary>
+            Returns a node representing the <c>ISERROR</c> function, and assigns the given argument.
+            </summary>
+            <param name="value">Node representing value to be tested.</param>
+            <returns>New node.</returns>
+            <remarks><c>ISERROR</c> returns <c>TRUE</c> if value is any error value.</remarks>
+        </member>
+        <member name="M:Formulacrum.Logic.Not">
+            <summary>
+            Returns a node representing the <c>NOT</c> function.
+            </summary>
+            <returns>New node.</returns>
+            <remarks><c>NOT</c> reverses the logic of its argument.</remarks>
+        </member>
+        <member name="M:Formulacrum.Logic.Not(Formulacrum.Nodes.Node)">
+            <summary>
+            Returns a node representing the <c>NOT</c> function, and assigns the given argument.
+            </summary>
+            <param name="value">Node representing value to reverse.</param>
+            <returns>New node.</returns>
+            <remarks><c>NOT</c> reverses the logic of its argument.</remarks>
+        </member>
+        <member name="M:Formulacrum.Logic.And(Formulacrum.Nodes.Node[])">
+            <summary>
+            Returns a node representing the <c>AND</c> function, with the given arguments.
+            </summary>
+            <param name="args">Arguments.</param>
+            <returns>New node.</returns>
+            <remarks><c>AND</c> returns <c>TRUE</c> if all of its arguments are <c>TRUE</c>.</remarks>
+        </member>
+        <member name="M:Formulacrum.Logic.Or(Formulacrum.Nodes.Node[])">
+            <summary>
+            Returns a node representing the <c>OR</c> function, with the given arguments.
+            </summary>
+            <param name="args">Arguments.</param>
+            <returns>New node.</returns>
+            <remarks><c>OR</c> returns <c>TRUE</c> if any argument is <c>TRUE</c>.</remarks>
+        </member>
+        <member name="M:Formulacrum.Logic.Xor(Formulacrum.Nodes.Node[])">
+            <summary>
+            Returns a node representing the <c>XOR</c> function, with the given arguments.
+            </summary>
+            <param name="args">Arguments.</param>
+            <returns>New node.</returns>
+            <remarks><c>XOR</c> returns a logical exclusive <c>OR</c> of all arguments.
+            This function was introduced with Excel 2013.</remarks>
+        </member>
+        <member name="M:Formulacrum.Logic.If">
+            <summary>
+            Returns a node representing the <c>IF</c> function.
+            </summary>
+            <returns>New node.</returns>
+            <remarks><c>IF</c> specifies a logical test to perform.</remarks>
+        </member>
+        <member name="M:Formulacrum.Logic.If(Formulacrum.Nodes.Node,Formulacrum.Nodes.Node)">
+            <summary>
+            Returns a node representing the <c>IF</c> function, with the given test and <c>TRUE</c> value;
+            <c>FALSE</c> value is left unassigned.
+            </summary>
+            <param name="test">Node representing a logical test.</param>
+            <param name="trueValue">Node representing result if test is <c>TRUE</c>.</param>
+            <returns>New node.</returns>
+            <remarks><c>IF</c> specifies a logical test to perform.</remarks>
+        </member>
+        <member name="M:Formulacrum.Logic.If(Formulacrum.Nodes.Node,Formulacrum.Nodes.Node,Formulacrum.Nodes.Node)">
+            <summary>
+            Returns a node representing the <c>IF</c> function, with the given test and <c>TRUE</c> value;
+            <c>FALSE</c> value is left unassigned.
+            </summary>
+            <param name="test">Node representing a logical test.</param>
+            <param name="trueValue">Node representing result if test is <c>TRUE</c>.</param>
+            <param name="falseValue">Node representing result if test is <c>FALSE</c>.</param>
+            <returns>New node.</returns>
+            <remarks><c>IF</c> specifies a logical test to perform.</remarks>
+        </member>
+        <member name="M:Formulacrum.Logic.IfError">
+            <summary>
+            Returns a node representing the <c>IFERROR</c> function.
+            </summary>
+            <returns>New node.</returns>
+            <remarks><c>IFERROR</c> returns a value you specify if a formula evaluates to an error;
+            otherwise, returns the result of the formula.</remarks>
+        </member>
+        <member name="M:Formulacrum.Logic.IfError(Formulacrum.Nodes.Node,Formulacrum.Nodes.Node)">
+            <summary>
+            Returns a node representing the <c>IFERROR</c> function, and assigns the given arguments.
+            </summary>
+            <param name="value">Expression that may result in error.</param>
+            <param name="errorValue">Expression to return if <paramref name="value"/> results in an error.</param>
+            <returns>New node.</returns>
+            <remarks><c>IFERROR</c> returns a value you specify if a formula evaluates to an error;
+            otherwise, returns the result of the formula.</remarks>
+        </member>
+        <member name="T:Formulacrum.Math">
+            <summary>
+            Factory for nodes representing math functions and operators.
+            </summary>
+        </member>
+        <member name="M:Formulacrum.Math.Abs">
+            <summary>
+            Returns a node representing the <c>ABS</c> function.
+            </summary>
+            <returns>New node.</returns>
+            <remarks><c>ABS</c> returns the absolute value of a number.</remarks>
+        </member>
+        <member name="M:Formulacrum.Math.Abs(Formulacrum.Nodes.Node)">
+            <summary>
+            Returns a node representing the <c>ABS</c> function, and assigns the given argument.
+            </summary>
+            <param name="value">Node representing value.</param>
+            <returns>New node.</returns>
+            <remarks><c>ABS</c> returns the absolute value of a number.</remarks>
+        </member>
+        <member name="M:Formulacrum.Math.Ceiling">
+            <summary>
+            Returns a node representing the <c>CEILING</c> function.
+            </summary>
+            <returns>New node.</returns>
+            <remarks><c>CEILING</c> rounds a number up, to the nearest integer
+            or to the nearest multiple of significance.</remarks>
+        </member>
+        <member name="M:Formulacrum.Math.Ceiling(Formulacrum.Nodes.Node,Formulacrum.Nodes.Node)">
+            <summary>
+            Returns a node representing the <c>CEILING</c> function.
+            </summary>
+            <param name="number">Node representing number to round.</param>
+            <param name="significance">Node representing multiple of significance.</param>
+            <returns>New node.</returns>
+            <remarks><c>CEILING</c> rounds a number up, to the nearest integer
+            or to the nearest multiple of significance.</remarks>
+        </member>
+        <member name="M:Formulacrum.Math.Sum(Formulacrum.Nodes.Node[])">
+            <summary>
+            Returns a node representing the <c>SUM</c> function, and assigns the given arguments.
+            </summary>
+            <param name="args">Arguments.</param>
+            <returns>New node.</returns>
+            <remarks><c>SUM</c> returns the average of its arguments.</remarks>
+        </member>
+        <member name="M:Formulacrum.Math.Add">
+            <summary>
+            Returns a node for addition (+).
+            </summary>
+            <returns>New node.</returns>
+        </member>
+        <member name="M:Formulacrum.Math.Add(Formulacrum.Nodes.Node,Formulacrum.Nodes.Node)">
+            <summary>
+            Returns a node representing addition (+), with the given arguments.
+            </summary>
+            <returns>New node.</returns>
+            <param name="arg1">First argument.</param>
+            <param name="arg2">Second argument.</param>
+        </member>
+        <member name="M:Formulacrum.Math.Subtract">
+            <summary>
+            Returns a node representing subtraction (-).
+            </summary>
+            <returns>New node.</returns>
+        </member>
+        <member name="M:Formulacrum.Math.Subtract(Formulacrum.Nodes.Node,Formulacrum.Nodes.Node)">
+            <summary>
+            Returns a node representing subtraction (-), with the given arguments.
+            </summary>
+            <returns>New node.</returns>
+            <param name="arg1">First argument.</param>
+            <param name="arg2">Second argument.</param>
+        </member>
+        <member name="M:Formulacrum.Math.Multiply">
+            <summary>
+            Returns a node representing multiplication (*).
+            </summary>
+            <returns>New node.</returns>
+        </member>
+        <member name="M:Formulacrum.Math.Multiply(Formulacrum.Nodes.Node,Formulacrum.Nodes.Node)">
+            <summary>
+            Returns a node representing multiplication (*), with the given arguments.
+            </summary>
+            <returns>New node.</returns>
+            <param name="arg1">First argument.</param>
+            <param name="arg2">Second argument.</param>
+        </member>
+        <member name="M:Formulacrum.Math.Divide">
+            <summary>
+            Returns a node representing division (/).
+            </summary>
+            <returns>New node.</returns>
+        </member>
+        <member name="M:Formulacrum.Math.Divide(Formulacrum.Nodes.Node,Formulacrum.Nodes.Node)">
+            <summary>
+            Returns a node representing division (/), with the given arguments.
+            </summary>
+            <returns>New node.</returns>
+            <param name="arg1">First argument.</param>
+            <param name="arg2">Second argument.</param>
+        </member>
+        <member name="M:Formulacrum.Math.Exponent">
+            <summary>
+            Returns a node representing exponentiation (^).
+            </summary>
+            <returns>New node.</returns>
+        </member>
+        <member name="M:Formulacrum.Math.Exponent(Formulacrum.Nodes.Node,Formulacrum.Nodes.Node)">
+            <summary>
+            Returns a node representing exponentiation (^), with the given arguments.
+            </summary>
+            <returns>New node.</returns>
+            <param name="arg1">First argument.</param>
+            <param name="arg2">Second argument.</param>
+        </member>
+        <member name="M:Formulacrum.Math.Negate">
+            <summary>
+            Returns a node representing negation (-).
+            </summary>
+            <returns>New node.</returns>
+        </member>
+        <member name="M:Formulacrum.Math.Negate(Formulacrum.Nodes.Node)">
+            <summary>
+            Returns a node representing negation (-), with the given argument.
+            </summary>
+            <returns>New node.</returns>
+            <param name="arg">Argument.</param>
+        </member>
+        <member name="M:Formulacrum.Math.Percent">
+            <summary>
+            Returns a node representing percent (%).
+            </summary>
+            <returns>New node.</returns>
+        </member>
+        <member name="M:Formulacrum.Math.Percent(Formulacrum.Nodes.Node)">
+            <summary>
+            Returns a node representing percent (%), with the given argument.
+            </summary>
+            <returns>New node.</returns>
+            <param name="arg">Argument.</param>
+        </member>
+        <member name="M:Formulacrum.Math.Average(Formulacrum.Nodes.Node[])">
+            <summary>
+            Returns a node representing the <c>AVERAGE</c> function, and assigns the given arguments.
+            </summary>
+            <param name="args">Arguments.</param>
+            <returns>New node.</returns>
+            <remarks><c>AVERAGE</c> returns the average of its arguments.</remarks>
+        </member>
+        <member name="M:Formulacrum.Math.Count(Formulacrum.Nodes.Node[])">
+            <summary>
+            Returns a node representing the <c>COUNT</c> function, and assigns the given arguments.
+            </summary>
+            <param name="args">Arguments.</param>
+            <returns>New node.</returns>
+            <remarks><c>COUNT</c> counts how many numbers are in the list of arguments.</remarks>
+        </member>
+        <member name="M:Formulacrum.Math.CountA(Formulacrum.Nodes.Node[])">
+            <summary>
+            Returns a node representing the <c>COUNTA</c> function, and assigns the given arguments.
+            </summary>
+            <param name="args">Arguments.</param>
+            <returns>New node.</returns>
+            <remarks><c>COUNTA</c> counts how many values are in the list of arguments.</remarks>
+        </member>
+        <member name="M:Formulacrum.Math.Max(Formulacrum.Nodes.Node[])">
+            <summary>
+            Returns a node representing the <c>MAX</c> function, and assigns the given arguments.
+            </summary>
+            <param name="args">Arguments.</param>
+            <returns>New node.</returns>
+            <remarks><c>MAX</c> returns the maximum value in a list of arguments.</remarks>
+        </member>
+        <member name="M:Formulacrum.Math.Min(Formulacrum.Nodes.Node[])">
+            <summary>
+            Returns a node representing the <c>MIN</c> function, and assigns the given arguments.
+            </summary>
+            <param name="args">Arguments.</param>
+            <returns>New node.</returns>
+            <remarks><c>MIN</c> returns the minimum value in a list of arguments.</remarks>
+        </member>
+        <member name="T:Formulacrum.TextFactory">
+            <summary>
+            Factory for nodes representing text functions and operators.
+            </summary>
+            <remarks>Name is longer than other factories to avoid ambiguity with <c>TEXT</c> function.</remarks>
+        </member>
+        <member name="M:Formulacrum.TextFactory.Char">
+            <summary>
+            Returns a node representing the <c>CHAR</c> function.
+            </summary>
+            <returns>New node.</returns>
+            <remarks><c>CHAR</c> returns the character specified by the code number.</remarks>
+        </member>
+        <member name="M:Formulacrum.TextFactory.Char(Formulacrum.Nodes.Node)">
+            <summary>
+            Returns a node representing the <c>CHAR</c> function, with the given argument.
+            </summary>
+            <param name="number">Node representing ASCII character code.</param>
+            <returns>New node.</returns>
+            <remarks><c>CHAR</c> returns the character specified by the code number.</remarks>
+        </member>
+        <member name="M:Formulacrum.TextFactory.Code">
+            <summary>
+            Returns a node representing the <c>CODE</c> function.
+            </summary>
+            <returns>New node.</returns>
+            <remarks><c>CODE</c> returns a numeric code for the first character in a text string.</remarks>
+        </member>
+        <member name="M:Formulacrum.TextFactory.Code(Formulacrum.Nodes.Node)">
+            <summary>
+            Returns a node representing the <c>CODE</c> function, with the given argument.
+            </summary>
+            <param name="text">Node representing text.</param>
+            <returns>New node.</returns>
+            <remarks><c>CODE</c> returns a numeric code for the first character in a text string.</remarks>
+        </member>
+        <member name="M:Formulacrum.TextFactory.Fixed">
+            <summary>
+            Returns a node representing the <c>FIXED</c> function.
+            </summary>
+            <returns>New node.</returns>
+            <remarks><c>FIXED</c> formats a number as text with a fixed number of decimals.</remarks>
+        </member>
+        <member name="M:Formulacrum.TextFactory.Fixed(Formulacrum.Nodes.Node)">
+            <summary>
+            Returns a node representing the <c>FIXED</c> function, and assigns the given argument.
+            </summary>
+            <param name="number">Node representing number to format.</param>
+            <returns>New node.</returns>
+            <remarks><c>FIXED</c> formats a number as text with a fixed number of decimals.</remarks>
+        </member>
+        <member name="M:Formulacrum.TextFactory.Fixed(Formulacrum.Nodes.Node,Formulacrum.Nodes.Node)">
+            <summary>
+            Returns a node representing the <c>FIXED</c> function, and assigns the given arguments.
+            </summary>
+            <param name="number">Node representing number to format.</param>
+            <param name="decimals">Node representing number of decimal places.</param>
+            <returns>New node.</returns>
+            <remarks><c>FIXED</c> formats a number as text with a fixed number of decimals.</remarks>
+        </member>
+        <member name="M:Formulacrum.TextFactory.Fixed(Formulacrum.Nodes.Node,Formulacrum.Nodes.Node,Formulacrum.Nodes.Node)">
+            <summary>
+            Returns a node representing the <c>FIXED</c> function, and assigns the give arguments.
+            </summary>
+            <param name="number">Node representing number to format.</param>
+            <param name="decimals">Node representing number of decimal places.</param>
+            <param name="noCommas">Node representing whether commas will be displayed or not.</param>
+            <returns>New node.</returns>
+            <remarks><c>FIXED</c> formats a number as text with a fixed number of decimals.</remarks>
+        </member>
+        <member name="M:Formulacrum.TextFactory.Text">
+            <summary>
+            Returns a node representing the <c>TEXT</c> function.
+            </summary>
+            <returns>New node.</returns>
+            <remarks><c>TEXT</c> returns a numeric code for the first character in a text string.</remarks>
+        </member>
+        <member name="M:Formulacrum.TextFactory.Text(Formulacrum.Nodes.Node,Formulacrum.Nodes.Node)">
+            <summary>
+            Returns a node representing the <c>TEXT</c> function, and assigns the given arguments.
+            </summary>
+            <param name="value">Node representing value to convert to text.</param>
+            <param name="format">Node representing format string.</param>
+            <returns>New node.</returns>
+            <remarks><c>TEXT</c> returns a numeric code for the first character in a text string.</remarks>
+        </member>
+        <member name="M:Formulacrum.TextFactory.Value">
+            <summary>
+            Returns a node representing the <c>VALUE</c> function.
+            </summary>
+            <returns>New node.</returns>
+            <remarks><c>VALUE</c> converts a text argument to a number.</remarks>
+        </member>
+        <member name="M:Formulacrum.TextFactory.Value(Formulacrum.Nodes.Node)">
+            <summary>
+            Returns a node representing the <c>VALUE</c> function, with the given argument.
+            </summary>
+            <param name="text">Node representing text.</param>
+            <returns>New node.</returns>
+            <remarks><c>VALUE</c> converts a text argument to a number.</remarks>
+        </member>
+        <member name="M:Formulacrum.TextFactory.Left">
+            <summary>
+            Returns a node representing the <c>LEFT</c> function.
+            </summary>
+            <returns>New node.</returns>
+            <remarks><c>LEFT</c> returns the leftmost characters from a text value.</remarks>
+        </member>
+        <member name="M:Formulacrum.TextFactory.Left(Formulacrum.Nodes.Node)">
+            <summary>
+            Returns a node representing the <c>LEFT</c> function, and assigns the given argument.
+            </summary>
+            <param name="text">Node representing text.</param>
+            <returns>New node.</returns>
+            <remarks><c>LEFT</c> returns the leftmost characters from a text value.</remarks>
+        </member>
+        <member name="M:Formulacrum.TextFactory.Left(Formulacrum.Nodes.Node,Formulacrum.Nodes.Node)">
+            <summary>
+            Returns a node representing the <c>LEFT</c> function, and assigns the given arguments.
+            </summary>
+            <param name="text">Node representing text.</param>
+            <param name="length">Node representing number of characters to return.</param>
+            <returns>New node.</returns>
+            <remarks><c>LEFT</c> returns the leftmost characters from a text value.</remarks>
+        </member>
+        <member name="M:Formulacrum.TextFactory.Right">
+            <summary>
+            Returns a node representing the <c>RIGHT</c> function.
+            </summary>
+            <returns>New node.</returns>
+            <remarks><c>RIGHT</c> returns the rightmost characters from a text value.</remarks>
+        </member>
+        <member name="M:Formulacrum.TextFactory.Right(Formulacrum.Nodes.Node)">
+            <summary>
+            Returns a node representing the <c>RIGHT</c> function, and assigns the given argument.
+            </summary>
+            <param name="text">Node representing text.</param>
+            <returns>New node.</returns>
+            <remarks><c>RIGHT</c> returns the rightmost characters from a text value.</remarks>
+        </member>
+        <member name="M:Formulacrum.TextFactory.Right(Formulacrum.Nodes.Node,Formulacrum.Nodes.Node)">
+            <summary>
+            Returns a node representing the <c>RIGHT</c> function, and assigns the given arguments.
+            </summary>
+            <param name="text">Node representing text.</param>
+            <param name="length">Node representing number of characters to return.</param>
+            <returns>New node.</returns>
+            <remarks><c>RIGHT</c> returns the rightmost characters from a text value.</remarks>
+        </member>
+        <member name="M:Formulacrum.TextFactory.Mid">
+            <summary>
+            Returns a node representing the <c>MID</c> function.
+            </summary>
+            <returns>New node.</returns>
+            <remarks><c>MID</c> returns a specific number of characters from a
+            text string starting at the position you specify.</remarks>
+        </member>
+        <member name="M:Formulacrum.TextFactory.Mid(Formulacrum.Nodes.Node,Formulacrum.Nodes.Node)">
+            <summary>
+            Returns a node representing the <c>MID</c> function, and assigns the given arguments.
+            </summary>
+            <param name="text">Node representing text.</param>
+            <param name="start">Node representing index to start at.</param>
+            <returns>New node.</returns>
+            <remarks><c>MID</c> returns a specific number of characters from a
+            text string starting at the position you specify.</remarks>
+        </member>
+        <member name="M:Formulacrum.TextFactory.Mid(Formulacrum.Nodes.Node,Formulacrum.Nodes.Node,Formulacrum.Nodes.Node)">
+            <summary>
+            Returns a node representing the <c>MID</c> function, and assigns the given arguments.
+            </summary>
+            <param name="text">Node representing text.</param>
+            <param name="start">Node representing index to start at.</param>
+            <param name="length">Node representing number of characters to return.</param>
+            <returns>New node.</returns>
+            <remarks><c>MID</c> returns a specific number of characters from a
+            text string starting at the position you specify.</remarks>
+        </member>
+        <member name="M:Formulacrum.TextFactory.Replace">
+            <summary>
+            Returns a node representing the <c>REPLACE</c> function.
+            </summary>
+            <returns>New node.</returns>
+            <remarks><c>REPLACE</c> replaces characters within text.</remarks>
+        </member>
+        <member name="M:Formulacrum.TextFactory.Replace(Formulacrum.Nodes.Node,Formulacrum.Nodes.Node,Formulacrum.Nodes.Node,Formulacrum.Nodes.Node)">
+            <summary>
+            Returns a node representing the <c>REPLACE</c> function, and assigns the given arguments.
+            </summary>
+            <param name="oldText">Node representing text to modify.</param>
+            <param name="start">Node representing index to start replacing at.</param>
+            <param name="length">Node representing number of characters to replace.</param>
+            <param name="newText">Node representing text to insert into <paramref name="oldText"/>.</param>
+            <returns>New node.</returns>
+            <remarks><c>REPLACE</c> replaces characters within text.</remarks>
+        </member>
+        <member name="M:Formulacrum.TextFactory.Substitute">
+            <summary>
+            Returns a node representing the <c>SUBSTITUTE</c> function.
+            </summary>
+            <returns>New node.</returns>
+            <remarks><c>SUBSTITUTE</c> substitutes new text for old text in a text string.</remarks>
+        </member>
+        <member name="M:Formulacrum.TextFactory.Substitute(Formulacrum.Nodes.Node,Formulacrum.Nodes.Node,Formulacrum.Nodes.Node)">
+            <summary>
+            Returns a node representing the <c>SUBSTITUTE</c> function, and assigns the given arguments.
+            </summary>
+            <param name="text">Node representing text to modify.</param>
+            <param name="oldText">Node representing text to remove.</param>
+            <param name="newText">Node representing text to insert.</param>
+            <returns>New node.</returns>
+            <remarks><c>SUBSTITUTE</c> substitutes new text for old text in a text string.</remarks>
+        </member>
+        <member name="M:Formulacrum.TextFactory.Substitute(Formulacrum.Nodes.Node,Formulacrum.Nodes.Node,Formulacrum.Nodes.Node,Formulacrum.Nodes.Node)">
+            <summary>
+            Returns a node representing the <c>SUBSTITUTE</c> function, and assigns the given arguments.
+            </summary>
+            <param name="text">Node representing text to modify.</param>
+            <param name="oldText">Node representing text to remove.</param>
+            <param name="newText">Node representing text to insert.</param>
+            <param name="instance">Node representing number of instance of <paramref name="oldText"/> to replace.</param>
+            <returns>New node.</returns>
+            <remarks><c>SUBSTITUTE</c> substitutes new text for old text in a text string.</remarks>
+        </member>
+        <member name="M:Formulacrum.TextFactory.Lower">
+            <summary>
+            Returns a node representing the <c>LOWER</c> function.
+            </summary>
+            <returns>New node.</returns>
+            <remarks><c>LOWER</c> converts text to lowercase.</remarks>
+        </member>
+        <member name="M:Formulacrum.TextFactory.Lower(Formulacrum.Nodes.Node)">
+            <summary>
+            Returns a node representing the <c>LOWER</c> function, and assigns the given argument.
+            </summary>
+            <param name="text">Node representing text.</param>
+            <returns>New node.</returns>
+            <remarks><c>LOWER</c> converts text to lowercase.</remarks>
+        </member>
+        <member name="M:Formulacrum.TextFactory.Proper">
+            <summary>
+            Returns a node representing the <c>PROPER</c> function.
+            </summary>
+            <returns>New node.</returns>
+            <remarks><c>PROPER</c> capitalizes the first letter in each word of a text value.</remarks>
+        </member>
+        <member name="M:Formulacrum.TextFactory.Proper(Formulacrum.Nodes.Node)">
+            <summary>
+            Returns a node representing the <c>LOWER</c> function, and assigns the given argument.
+            </summary>
+            <param name="text">Node representing text.</param>
+            <returns>New node.</returns>
+            <remarks><c>PROPER</c> capitalizes the first letter in each word of a text value.</remarks>
+        </member>
+        <member name="M:Formulacrum.TextFactory.Upper">
+            <summary>
+            Returns a node representing the <c>UPPER</c> function.
+            </summary>
+            <returns>New node.</returns>
+            <remarks><c>UPPER</c> converts text to uppercase.</remarks>
+        </member>
+        <member name="M:Formulacrum.TextFactory.Upper(Formulacrum.Nodes.Node)">
+            <summary>
+            Returns a node representing the <c>UPPER</c> function, and assigns the given argument.
+            </summary>
+            <param name="text">Node representing text.</param>
+            <returns>New node.</returns>
+            <remarks><c>UPPER</c> converts text to uppercase.</remarks>
+        </member>
+        <member name="M:Formulacrum.TextFactory.Clean">
+            <summary>
+            Returns a node representing the <c>CLEAN</c> function.
+            </summary>
+            <returns>New node.</returns>
+            <remarks><c>CLEAN</c> removes all non-printable characters from text.</remarks>
+        </member>
+        <member name="M:Formulacrum.TextFactory.Clean(Formulacrum.Nodes.Node)">
+            <summary>
+            Returns a node representing the <c>CLEAN</c> function.
+            </summary>
+            <param name="text">Node representing text.</param>
+            <returns>New node.</returns>
+            <remarks><c>CLEAN</c> removes all non-printable characters from text.</remarks>
+        </member>
+        <member name="M:Formulacrum.TextFactory.Trim">
+            <summary>
+            Returns a node representing the <c>TRIM</c> function.
+            </summary>
+            <returns>New node.</returns>
+            <remarks><c>TRIM</c> removes spaces from text.</remarks>
+        </member>
+        <member name="M:Formulacrum.TextFactory.Trim(Formulacrum.Nodes.Node)">
+            <summary>
+            Returns a node representing the <c>TRIM</c> function, and assigns the given argument.
+            </summary>
+            <param name="text">Node representing text.</param>
+            <returns>New node.</returns>
+            <remarks><c>TRIM</c> removes spaces from text.</remarks>
+        </member>
+        <member name="M:Formulacrum.TextFactory.Concatenate(Formulacrum.Nodes.Node[])">
+            <summary>
+            Returns a node representing the <c>CONCATENATE</c> function, and assigns the given argument.
+            </summary>
+            <param name="args">Arguments.</param>
+            <returns>New node.</returns>
+            <remarks><c>CONCATENATE</c> joins several text items into one text item.</remarks>
+        </member>
+        <member name="M:Formulacrum.TextFactory.Rept">
+            <summary>
+            Returns a node representing the <c>REPT</c> function.
+            </summary>
+            <returns>New node.</returns>
+            <remarks><c>REPT</c> repeats text a given number of times.</remarks>
+        </member>
+        <member name="M:Formulacrum.TextFactory.Rept(Formulacrum.Nodes.Node,Formulacrum.Nodes.Node)">
+            <summary>
+            Returns a node representing the <c>REPT</c> function, and assigns the given arguments.
+            </summary>
+            <param name="text">Node representing text.</param>
+            <param name="times">Node representing number of times to repeat.</param>
+            <returns>New node.</returns>
+            <remarks><c>REPT</c> repeats text a given number of times.</remarks>
+        </member>
+        <member name="M:Formulacrum.TextFactory.Len">
+            <summary>
+            Returns a node representing the <c>LEN</c> function.
+            </summary>
+            <returns>New node.</returns>
+            <remarks><c>LEN</c> returns the number of characters in a text string.</remarks>
+        </member>
+        <member name="M:Formulacrum.TextFactory.Len(Formulacrum.Nodes.Node)">
+            <summary>
+            Returns a node representing the <c>LEN</c> function, and assigns the given argument.
+            </summary>
+            <param name="text">Node representing text.</param>
+            <returns>New node.</returns>
+            <remarks><c>LEN</c> returns the number of characters in a text string.</remarks>
+        </member>
+        <member name="M:Formulacrum.TextFactory.Find">
+            <summary>
+            Returns a node representing the <c>FIND</c> function.
+            </summary>
+            <returns>New node.</returns>
+            <remarks><c>FIND</c> finds one text value within another (case-sensitive).</remarks>
+        </member>
+        <member name="M:Formulacrum.TextFactory.Find(Formulacrum.Nodes.Node,Formulacrum.Nodes.Node)">
+            <summary>
+            Returns a node representing the <c>FIND</c> function, and assigns the given arguments.
+            </summary>
+            <param name="findText">Node representing text to find.</param>
+            <param name="withinText">Node representing text to look in.</param>
+            <returns>New node.</returns>
+            <remarks><c>FIND</c> finds one text value within another (case-sensitive).</remarks>
+        </member>
+        <member name="M:Formulacrum.TextFactory.Find(Formulacrum.Nodes.Node,Formulacrum.Nodes.Node,Formulacrum.Nodes.Node)">
+            <summary>
+            Returns a node representing the <c>FIND</c> function, and assigns the given arguments.
+            </summary>
+            <param name="findText">Node representing text to find.</param>
+            <param name="withinText">Node representing text to look in.</param>
+            <param name="start">Node representing index to start at.</param>
+            <returns>New node.</returns>
+            <remarks><c>FIND</c> finds one text value within another (case-sensitive).</remarks>
+        </member>
+        <member name="M:Formulacrum.TextFactory.Search">
+            <summary>
+            Returns a node representing the <c>SEARCH</c> function.
+            </summary>
+            <returns>New node.</returns>
+            <remarks><c>SEARCH</c> finds one text value within another (not case-sensitive).</remarks>
+        </member>
+        <member name="M:Formulacrum.TextFactory.Search(Formulacrum.Nodes.Node,Formulacrum.Nodes.Node,Formulacrum.Nodes.Node)">
+            <summary>
+            Returns a node representing the <c>SEARCH</c> function.
+            </summary>
+            <param name="findText">Node representing text to look for.</param>
+            <param name="withinText">Node representing text to look in.</param>
+            <param name="start">Node representing index to start at.</param>
+            <returns>New node.</returns>
+            <remarks><c>SEARCH</c> finds one text value within another (not case-sensitive).</remarks>
+        </member>
+        <member name="M:Formulacrum.TextFactory.Concat">
+            <summary>
+            Returns a node representing concatenation (&amp;).
+            </summary>
+            <returns>New node.</returns>
+        </member>
+        <member name="M:Formulacrum.TextFactory.Concat(Formulacrum.Nodes.Node,Formulacrum.Nodes.Node)">
+            <summary>
+            Returns a node representing concatenation (&amp;), with the given arguments.
+            </summary>
+            <returns>New node.</returns>
+            <param name="arg1">First argument.</param>
+            <param name="arg2">Second argument.</param>
+        </member>
+        <member name="T:Formulacrum.AbsoluteRefs">
+            <summary>
+            Factory for nodes representing references, using absolute coordinates.
+            </summary>
+        </member>
+        <member name="M:Formulacrum.AbsoluteRefs.Empty">
+            <summary>
+            Returns a node representing an absolute reference with unassigned coordinates.
+            </summary>
+            <returns>New node.</returns>
+        </member>
+        <member name="M:Formulacrum.AbsoluteRefs.Cell(Formulacrum.Nodes.IntNode,Formulacrum.Nodes.IntNode)">
+            <summary>
+            Returns a node representing an absolute reference with coordinates for the cell at the given row and column.
+            </summary>
+            <param name="row">Row number.</param>
+            <param name="column">Column number.</param>
+            <returns>New node.</returns>
+        </member>
+        <member name="M:Formulacrum.AbsoluteRefs.Row(Formulacrum.Nodes.IntNode)">
+             <summary>
+            Returns a node representing an absolute reference with coordinates for the row at the give index.
+             </summary>
+             <param name="index">Row number.</param>
+             <returns>New node.</returns>
+        </member>
+        <member name="M:Formulacrum.AbsoluteRefs.Rows(Formulacrum.Nodes.IntNode,Formulacrum.Nodes.IntNode)">
+            <summary>
+            Returns a node representing an absolute reference with coordinates for the span of rows between the two given indexes.
+            </summary>
+            <param name="top">First row.</param>
+            <param name="bottom">Last row.</param>
+            <returns>New node.</returns>
+        </member>
+        <member name="M:Formulacrum.AbsoluteRefs.Column(Formulacrum.Nodes.IntNode)">
+            <summary>
+            Returns a node representing an absolute reference with coordinates for the column at the give index.
+            </summary>
+            <param name="index">Column number.</param>
+            <returns>New node.</returns>
+        </member>
+        <member name="M:Formulacrum.AbsoluteRefs.Columns(Formulacrum.Nodes.IntNode,Formulacrum.Nodes.IntNode)">
+            <summary>
+            Returns a node representing an absolute reference with coordinates for the span of columns between the two given indexes.
+            </summary>
+            <param name="left">First column.</param>
+            <param name="right">Last column.</param>
+            <returns>New node.</returns>
+        </member>
+        <member name="M:Formulacrum.AbsoluteRefs.Range(Formulacrum.Nodes.IntNode,Formulacrum.Nodes.IntNode,Formulacrum.Nodes.IntNode,Formulacrum.Nodes.IntNode)">
+            <summary>
+            Returns a node representing an absolute reference with the given coordinates.
+            </summary>
+            <param name="top">First row.</param>
+            <param name="left">First column.</param>
+            <param name="bottom">Last row.</param>
+            <param name="right">Last column.</param>
+            <returns>New node.</returns>
+        </member>
+        <member name="M:Formulacrum.AbsoluteRefs.Book(System.String)">
+            <summary>
+            Returns a node representing a workbook reference.
+            </summary>
+            <param name="name">Workbook name.</param>
+            <returns>New node.</returns>
+        </member>
+        <member name="M:Formulacrum.AbsoluteRefs.Sheet(System.String)">
+            <summary>
+            Returns a node representing a worksheet reference.
+            </summary>
+            <param name="name">Worksheet name.</param>
+            <returns>New node.</returns>
+        </member>
+        <member name="T:Formulacrum.RelativeRefs">
+            <summary>
+            Factory for nodes representing references, using relative coordinates.
+            </summary>
+        </member>
+        <member name="M:Formulacrum.RelativeRefs.Empty">
+            <summary>
+            Returns node representing a relative reference with unassigned coordinates.
+            </summary>
+            <returns>New node.</returns>
+        </member>
+        <member name="M:Formulacrum.RelativeRefs.Cell(Formulacrum.Nodes.IntNode,Formulacrum.Nodes.IntNode)">
+            <summary>
+            Returns node representing a relative reference with coordinates for the cell at the given row and column.
+            </summary>
+            <param name="row">Row number.</param>
+            <param name="column">Column number.</param>
+            <returns>New node.</returns>
+        </member>
+        <member name="M:Formulacrum.RelativeRefs.Row(Formulacrum.Nodes.IntNode)">
+            <summary>
+            Returns node representing a relative reference with coordinates for the row at the give index.
+            </summary>
+            <param name="index">Row number.</param>
+            <returns>New node.</returns>
+        </member>
+        <member name="M:Formulacrum.RelativeRefs.Rows(Formulacrum.Nodes.IntNode,Formulacrum.Nodes.IntNode)">
+            <summary>
+            Returns node representing a relative reference with coordinates for the span of rows between the two given indexes.
+            </summary>
+            <param name="top">First row.</param>
+            <param name="bottom">Last row.</param>
+            <returns>New node.</returns>
+        </member>
+        <member name="M:Formulacrum.RelativeRefs.Column(Formulacrum.Nodes.IntNode)">
+            <summary>
+            Returns node representing a relative reference with coordinates for the column at the give index.
+            </summary>
+            <param name="index">Column number.</param>
+            <returns>New node.</returns>
+        </member>
+        <member name="M:Formulacrum.RelativeRefs.Columns(Formulacrum.Nodes.IntNode,Formulacrum.Nodes.IntNode)">
+            <summary>
+            Returns node representing a relative reference with coordinates for the span of columns between the two given indexes.
+            </summary>
+            <param name="left">First column.</param>
+            <param name="right">Last column.</param>
+            <returns>New node.</returns>
+        </member>
+        <member name="M:Formulacrum.RelativeRefs.Range(Formulacrum.Nodes.IntNode,Formulacrum.Nodes.IntNode,Formulacrum.Nodes.IntNode,Formulacrum.Nodes.IntNode)">
+            <summary>
+            Returns node representing a relative reference with the given coordinates.
+            </summary>
+            <param name="top">First row.</param>
+            <param name="left">First column.</param>
+            <param name="bottom">Last row.</param>
+            <param name="right">Last column.</param>
+            <returns>New node.</returns>
+        </member>
+        <member name="M:Formulacrum.RelativeRefs.Book(System.String)">
+            <summary>
+            Returns a node representing a workbook reference.
+            </summary>
+            <param name="name">Workbook name.</param>
+            <returns>New node.</returns>
+        </member>
+        <member name="M:Formulacrum.RelativeRefs.Sheet(System.String)">
+            <summary>
+            Returns a node representing a worksheet reference.
+            </summary>
+            <param name="name">Worksheet name.</param>
+            <returns>New node.</returns>
         </member>
     </members>
 </doc>

@@ -5,14 +5,14 @@ namespace Formulacrum {
     partial class TextFactory {
 
         /// <summary>
-        /// Returns a binary operator node for concatenation.
+        /// Returns a node representing concatenation (&amp;).
         /// </summary>
-        /// <returns>New operator node.</returns>
+        /// <returns>New node.</returns>
         public static BinaryOperatorNode Concat() => new BinaryOperatorNode("Concatenate", "&");
         /// <summary>
-        /// Returns a binary operator node for concatenation, with the given arguments.
+        /// Returns a node representing concatenation (&amp;), with the given arguments.
         /// </summary>
-        /// <returns>New operator node.</returns>
+        /// <returns>New node.</returns>
         /// <param name="arg1">First argument.</param>
         /// <param name="arg2">Second argument.</param>
         public static BinaryOperatorNode Concat(Node arg1, Node arg2) =>

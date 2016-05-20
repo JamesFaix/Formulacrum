@@ -5,3 +5,4 @@ C:\Users\James\Documents\GitHub\Formulacrum\Formulacrum2\bin\Analysis\Formulacru
 C:\Users\James\Documents\GitHub\Formulacrum\Formulacrum2\bin\Analysis\Formulacrum.dll.lastcodeanalysissucceeded
 C:\Users\James\Documents\GitHub\Formulacrum\Formulacrum2\obj\Analysis\Formulacrum.dll
 C:\Users\James\Documents\GitHub\Formulacrum\Formulacrum2\obj\Analysis\Formulacrum.pdb
+C:\Users\James\Documents\GitHub\Formulacrum\Formulacrum2\obj\Analysis\Formulacrum.csprojResolveAssemblyReference.cache

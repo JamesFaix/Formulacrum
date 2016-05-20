@@ -90,7 +90,7 @@
     <Reference Include="System" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ExtensionMethods.cs" />
+    <Compile Include="Nodes\CommonImplementation.cs" />
     <Compile Include="Factories\CommonImplementation.cs" />
     <Compile Include="Factories\Common.cs" />
     <Compile Include="Factories\ComparisonOperators.cs">
