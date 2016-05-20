@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Formulacrum {
+namespace Formulacrum.Nodes {
 
     /// <summary>
     /// Formula node representing pair of grouping symbols.
@@ -16,7 +16,7 @@ namespace Formulacrum {
         /// <summary>
         /// Creates a new group node with the given properties.
         /// </summary>
-        /// <param name="name">A user-fiendly name for the node.</param>
+        /// <param name="name">A user-friendly name for the node.</param>
         /// <param name="openSymbol">Opening symbol.</param>
         /// <param name="closeSymbol">Closing symbol.</param>
         /// <remarks>

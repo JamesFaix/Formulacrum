@@ -1,4 +1,4 @@
-﻿namespace Formulacrum {
+﻿namespace Formulacrum.Nodes {
 
     /// <summary>
     /// Type that can be rendered as an Excel formula.

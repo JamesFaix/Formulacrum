@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Formulacrum {
+namespace Formulacrum.Nodes {
 
     /// <summary>
     /// Base class for formula nodes representing references.

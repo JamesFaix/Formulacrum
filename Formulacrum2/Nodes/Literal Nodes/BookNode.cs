@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Formulacrum {
+namespace Formulacrum.Nodes {
 
     /// <summary>
     /// Formula node representing a workbook reference.

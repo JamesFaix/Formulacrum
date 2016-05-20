@@ -2,7 +2,7 @@
 using System.Linq;
 using System.Text;
 
-namespace Formulacrum {
+namespace Formulacrum.Nodes {
 
     /// <summary>
     /// Formula node representing a reference with absolute coordinates.

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Text;
 
-namespace Formulacrum {
+namespace Formulacrum.Nodes {
 
     /// <summary>
     /// Formula node representing an operator with two arguments.

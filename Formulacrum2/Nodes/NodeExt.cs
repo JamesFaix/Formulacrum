@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Formulacrum {
+namespace Formulacrum.Nodes {
 
     /// <summary>
     /// Extension methods for Formulacrum.Node.

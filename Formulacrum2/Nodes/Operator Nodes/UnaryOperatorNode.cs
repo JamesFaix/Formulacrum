@@ -1,4 +1,4 @@
-﻿namespace Formulacrum {
+﻿namespace Formulacrum.Nodes {
 
     /// <summary>
     /// Formula node representing an operator with one argument.
