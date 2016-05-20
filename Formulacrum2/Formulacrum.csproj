@@ -91,12 +91,46 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ExtensionMethods.cs" />
-    <Compile Include="Factories\FunctionNodeFactory.cs" />
-    <Compile Include="Factories\GroupNodeFactory.cs" />
-    <Compile Include="Factories\AbsoluteReferenceNodeFactory.cs" />
-    <Compile Include="Factories\OperatorNodeFactory.cs" />
-    <Compile Include="Factories\RelativeReferenceNodeFactory.cs" />
-    <Compile Include="Factories\LiteralNodeFactory.cs" />
+    <Compile Include="Factories\CommonImplementation.cs" />
+    <Compile Include="Factories\Common.cs" />
+    <Compile Include="Factories\ComparisonOperators.cs">
+      <DependentUpon>Logic.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Factories\InformationFunctions.cs">
+      <DependentUpon>Logic.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Factories\LogicalFunctions.cs">
+      <DependentUpon>Logic.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Factories\Logic.cs" />
+    <Compile Include="Factories\MathFunctions.cs">
+      <DependentUpon>Math.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Factories\Math.cs" />
+    <Compile Include="Factories\MathOperators.cs">
+      <DependentUpon>Math.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Factories\StatisticalFunctions.cs">
+      <DependentUpon>Math.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Factories\TextFactory.cs" />
+    <Compile Include="Factories\TextFunctions.cs">
+      <DependentUpon>TextFactory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Factories\Groups.cs">
+      <DependentUpon>Common.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Factories\AbsoluteRefs.cs" />
+    <Compile Include="Factories\Operators.cs">
+      <DependentUpon>Common.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Factories\RelativeRefs.cs" />
+    <Compile Include="Factories\Literals.cs">
+      <DependentUpon>Common.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Factories\TextOperators.cs">
+      <DependentUpon>TextFactory.cs</DependentUpon>
+    </Compile>
     <Compile Include="GlobalSuppressions.cs" />
     <Compile Include="Nodes\NodeExt.cs" />
     <Compile Include="Nodes\Group Nodes\FunctionNode.cs" />
@@ -121,5 +155,6 @@
     <None Include="Nodes\NodeComposition.cd" />
     <None Include="Nodes\NodeInheritance.cd" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -1,9 +1,11 @@
-﻿namespace Formulacrum {
+﻿using Formulacrum.Nodes;
+
+namespace Formulacrum {
 
     /// <summary>
     /// Factory for absolute reference formula nodes.
     /// </summary>
-	public static class AbsoluteReferenceNodeFactory {
+	public static class AbsoluteRefs {
 
         /// <summary>
         /// Returns absolute reference node with unassigned coordinates.
@@ -64,7 +66,20 @@
         /// <returns>New absolute reference node.</returns>
         public static ReferenceNode Range(IntNode top, IntNode left, IntNode bottom, IntNode right) =>
             new AbsoluteReferenceNode().SetCoordinates(top, left, bottom, right);
+        
+        /// <summary>
+        /// Returns a node containing a workbook reference.
+        /// </summary>
+        /// <param name="name">Workbook name.</param>
+        /// <returns>Node containing workbook reference.</returns>
+        public static BookNode Book(string name) => new BookNode(name);
 
+        /// <summary>
+        /// Returns a node containing a worksheet reference.
+        /// </summary>
+        /// <param name="name">Worksheet name.</param>
+        /// <returns>Node containing worksheet reference.</returns>
+        public static SheetNode Sheet(string name) => new SheetNode(name);
     }
 }
 

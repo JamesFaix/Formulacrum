@@ -1,9 +1,8 @@
-﻿namespace Formulacrum {
+﻿using Formulacrum.Nodes;
 
-    /// <summary>
-    /// Factory for grouping formula nodes.
-    /// </summary>
-    public static class GroupNodeFactory {
+namespace Formulacrum {
+
+    partial class Common {
 
         /// <summary>
         /// Returns a group node for wrapping other nodes in parentheses.
