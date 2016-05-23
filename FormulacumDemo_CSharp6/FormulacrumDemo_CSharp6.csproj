@@ -7,8 +7,8 @@
     <ProjectGuid>{E1182C53-CE08-4B80-8BD9-AFFA3A351403}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Formulacum.Demo</RootNamespace>
-    <AssemblyName>FormulacumDemo_CSharp6</AssemblyName>
+    <RootNamespace>Formulacrum.Demo</RootNamespace>
+    <AssemblyName>FormulacrumDemo_CSharp6</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>

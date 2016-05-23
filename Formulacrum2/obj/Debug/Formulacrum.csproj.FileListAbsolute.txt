@@ -2,4 +2,3 @@ C:\Users\James\Documents\GitHub\Formulacrum\Formulacrum2\bin\Debug\Formulacrum.d
 C:\Users\James\Documents\GitHub\Formulacrum\Formulacrum2\bin\Debug\Formulacrum.pdb
 C:\Users\James\Documents\GitHub\Formulacrum\Formulacrum2\obj\Debug\Formulacrum.dll
 C:\Users\James\Documents\GitHub\Formulacrum\Formulacrum2\obj\Debug\Formulacrum.pdb
-C:\Users\James\Documents\GitHub\Formulacrum\Formulacrum2\obj\Debug\Formulacrum.csprojResolveAssemblyReference.cache

@@ -86,7 +86,7 @@ namespace Formulacrum.Nodes.Test {
 
         #endregion
 
-
+        //TODO : Finish tests for NodeCollection, GroupNode, FunctionNode, NodeExt, and Factories
 
 
 
