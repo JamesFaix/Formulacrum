@@ -1,8 +1,0 @@
-C:\Users\James\Documents\GitHub\Formulacrum\Formulacrum2\bin\Analysis\Formulacrum2.dll
-C:\Users\James\Documents\GitHub\Formulacrum\Formulacrum2\bin\Analysis\Formulacrum2.pdb
-C:\Users\James\Documents\GitHub\Formulacrum\Formulacrum2\bin\Analysis\Formulacrum2.dll.CodeAnalysisLog.xml
-C:\Users\James\Documents\GitHub\Formulacrum\Formulacrum2\bin\Analysis\Formulacrum2.dll.lastcodeanalysissucceeded
-C:\Users\James\Documents\GitHub\Formulacrum\Formulacrum2\obj\Analysis\Formulacrum2.dll
-C:\Users\James\Documents\GitHub\Formulacrum\Formulacrum2\obj\Analysis\Formulacrum2.pdb
-C:\Users\James\Documents\GitHub\Formulacrum\Formulacrum2\bin\Analysis\Formulacrum2.XML
-C:\Users\James\Documents\GitHub\Formulacrum\Formulacrum2\obj\Analysis\Formulacrum2.csprojResolveAssemblyReference.cache

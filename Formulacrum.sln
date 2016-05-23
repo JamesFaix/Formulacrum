@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25123.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Formulacrum", "Formulacrum2\Formulacrum.csproj", "{2A0C0E92-F6FC-49CA-9921-E59071B06D01}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Formulacrum", "Formulacrum\Formulacrum.csproj", "{2A0C0E92-F6FC-49CA-9921-E59071B06D01}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FormulacrumDemo_CSharp6", "FormulacumDemo_CSharp6\FormulacrumDemo_CSharp6.csproj", "{E1182C53-CE08-4B80-8BD9-AFFA3A351403}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Formulacrum.Demo_CSharp6", "Formulacrum.Demo_CSharp6\Formulacrum.Demo_CSharp6.csproj", "{E1182C53-CE08-4B80-8BD9-AFFA3A351403}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Formulacrum.Test", "Formulacrum.Test\Formulacrum.Test.csproj", "{067456C0-086C-46A8-B37F-1405717B7BFC}"
 EndProject

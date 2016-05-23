@@ -1,0 +1,9 @@
+C:\Users\James\Documents\GitHub\Formulacrum\FormulacumDemo_CSharp6\bin\Debug\Formulacrum.Demo_CSharp6.exe.config
+C:\Users\James\Documents\GitHub\Formulacrum\Formulacrum.Demo_CSharp6\bin\Debug\Formulacrum.Demo_CSharp6.exe.config
+C:\Users\James\Documents\GitHub\Formulacrum\Formulacrum.Demo_CSharp6\bin\Debug\Formulacrum.Demo_CSharp6.exe
+C:\Users\James\Documents\GitHub\Formulacrum\Formulacrum.Demo_CSharp6\bin\Debug\Formulacrum.Demo_CSharp6.pdb
+C:\Users\James\Documents\GitHub\Formulacrum\Formulacrum.Demo_CSharp6\bin\Debug\Formulacrum.dll
+C:\Users\James\Documents\GitHub\Formulacrum\Formulacrum.Demo_CSharp6\bin\Debug\Formulacrum.pdb
+C:\Users\James\Documents\GitHub\Formulacrum\Formulacrum.Demo_CSharp6\obj\Debug\Formulacrum.Demo_CSharp6.csprojResolveAssemblyReference.cache
+C:\Users\James\Documents\GitHub\Formulacrum\Formulacrum.Demo_CSharp6\obj\Debug\Formulacrum.Demo_CSharp6.exe
+C:\Users\James\Documents\GitHub\Formulacrum\Formulacrum.Demo_CSharp6\obj\Debug\Formulacrum.Demo_CSharp6.pdb

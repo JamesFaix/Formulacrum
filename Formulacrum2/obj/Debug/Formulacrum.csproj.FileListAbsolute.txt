@@ -1,4 +1,0 @@
-C:\Users\James\Documents\GitHub\Formulacrum\Formulacrum2\bin\Debug\Formulacrum.dll
-C:\Users\James\Documents\GitHub\Formulacrum\Formulacrum2\bin\Debug\Formulacrum.pdb
-C:\Users\James\Documents\GitHub\Formulacrum\Formulacrum2\obj\Debug\Formulacrum.dll
-C:\Users\James\Documents\GitHub\Formulacrum\Formulacrum2\obj\Debug\Formulacrum.pdb
