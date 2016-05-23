@@ -21,7 +21,7 @@
         /// </summary>
         /// <param name="value">Value.</param>
         public IntNode(int value)
-            : this(value, null) {
+            : this(value, "{0}") {
         }
 
         /// <summary>

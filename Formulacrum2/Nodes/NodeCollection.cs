@@ -64,12 +64,12 @@ namespace Formulacrum.Nodes {
         public Node this[int index] {
             get {
                 if (index < 0 || index >= Count)
-                    throw new ArgumentOutOfRangeException(index.ToString());
+                    throw new IndexOutOfRangeException(index.ToString());
                 return inner[index];
             }
             set {
                 if (index < 0 || index >= Count)
-                    throw new ArgumentOutOfRangeException(index.ToString());
+                    throw new IndexOutOfRangeException(index.ToString());
                 inner[index] = value;
             }
         }

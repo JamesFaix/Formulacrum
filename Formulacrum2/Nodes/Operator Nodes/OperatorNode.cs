@@ -8,7 +8,6 @@ namespace Formulacrum.Nodes {
     /// </summary>
     public abstract class OperatorNode : Node {
 
-        private readonly string symbol;
         private readonly Node[] children;
 
         internal OperatorNode(string name, string symbol, int argCount)
@@ -19,7 +18,7 @@ namespace Formulacrum.Nodes {
             if (argCount < 1)
                 throw new ArgumentOutOfRangeException(nameof(argCount));
 
-            this.symbol = symbol;
+            this.Symbol = symbol;
             this.children = new Node[argCount];
         }
 
@@ -36,7 +35,7 @@ namespace Formulacrum.Nodes {
         /// <summary>
         /// Operator symbol.
         /// </summary>
-        public string Symbol => symbol;
+        public string Symbol { get; }
 
         /// <summary>
         /// Gets collection of child nodes.

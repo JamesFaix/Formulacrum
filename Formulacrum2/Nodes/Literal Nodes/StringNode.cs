@@ -28,6 +28,6 @@
         /// Returns a new node with identical properties to this node.
         /// </summary>
         /// <returns>New node with identical properties to this node.</returns>
-        public override Node Clone() => new StringNode(Value);
+        public override Node Clone() => new StringNode(Value, Format);
     }
 }

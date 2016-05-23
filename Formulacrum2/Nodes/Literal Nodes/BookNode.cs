@@ -13,7 +13,7 @@ namespace Formulacrum.Nodes {
         /// <param name="bookName">Workbook name.</param>
         /// <exception cref="System.ArgumentException"><c>!IsValidName(bookName)</c></exception>
         public BookNode(string bookName)
-            : base(bookName) {
+            : base(bookName, "{0}") {
             if (!IsValidName(bookName))
                 throw new ArgumentException("Invalid book name");
         }

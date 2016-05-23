@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System;
 
 namespace Formulacrum.Nodes {
 
@@ -17,19 +18,13 @@ namespace Formulacrum.Nodes {
         /// If <c>null</c>, the default string representation of <c>T</c> will be used.</param>
         public LiteralNode(T value, string format)
             : base("Literal") {
+            if (format == null)
+                throw new ArgumentNullException(nameof(format));
 
             this.Value = value;
             this.Format = format;
         }
-
-        /// <summary>
-        /// Create a new literal node with the given value.
-        /// </summary>
-        /// <param name="value">Value.</param>
-        public LiteralNode(T value)
-            : this(value, null) {
-        }
-
+        
         #region Properties
 
         /// <summary>

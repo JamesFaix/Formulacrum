@@ -1,111 +1,146 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Linq;
 
 namespace Formulacrum.Nodes {
+
+    //TODO: Add support for use of $ for absolute coordinates
+
+    //TODO: Add support for named range references
 
     /// <summary>
     /// Base class for formula nodes representing references.
     /// </summary>
     public abstract class ReferenceNode : Node {
-
-        private IntNode topRow, bottomRow, leftColumn, rightColumn;
-
+        
+        #region Concrete Portion
         /// <summary>
         /// Creates a new reference node.
         /// </summary>
         internal ReferenceNode()
             : base("Reference") {
         }
+        
+        #region Properties
 
         /// <summary>
         /// Gets or sets the node for first row.
         /// </summary>
-        /// <exception cref="System.ArgumentOutOfRangeException"><c>Top</c>
-        /// must have lower number than <c>Bottom</c>.</exception>
-        public virtual IntNode Top {
-            get { return topRow; }
-            set {
-                if (Bottom != null && value != null && value.Value > Bottom.Value)
-                    throw new ArgumentOutOfRangeException(nameof(Top) + " must have lower number than " + nameof(Bottom));
-                topRow = value;
-            }
-        }
+        public virtual IntNode Top { get; set; }
 
         /// <summary>
         /// Gets or sets the node for first column.
         /// </summary>
-        /// <exception cref="System.ArgumentOutOfRangeException"><c>Left</c>
-        /// must have lower number than <c>Right</c>.</exception>
-        public virtual IntNode Left {
-            get { return leftColumn; }
-            set {
-                if (Right != null && value != null && value.Value > Right.Value)
-                    throw new ArgumentOutOfRangeException(nameof(Left) + " must have lower number than " + nameof(Right));
-                leftColumn = value;
-            }
-        }
+        public virtual IntNode Left { get; set; }
 
         /// <summary>
         /// Gets or sets the node for last row.
         /// </summary>
-        /// <exception cref="System.ArgumentOutOfRangeException"><c>Bottom</c>
-        /// must have higher number than <c>Top</c>.</exception>
-        /// <exception cref="System.InvalidOperationException"><c>Bottom</c>
-        /// can only be used if <c>Top</c> is already assigned.</exception>
-        public virtual IntNode Bottom {
-            get { return bottomRow; }
-            set {
-                if (Top == null)
-                    throw new InvalidOperationException(nameof(Bottom) + " can only be used if " + nameof(Top) + " is already assigned.");
-                if (value != null && value.Value < Top.Value)
-                    throw new ArgumentOutOfRangeException(nameof(Bottom) + " must have higher number than " + nameof(Top));
-                bottomRow = value;
-            }
-        }
+        public virtual IntNode Bottom { get; set; }
 
         /// <summary>
         /// Gets or sets the node for last column.
         /// </summary>
-        /// <exception cref="System.ArgumentOutOfRangeException"><c>Right</c>
-        /// must have higher number than <c>Left</c>.</exception>
-        /// <exception cref="System.InvalidOperationException"><c>Right</c>
-        /// can only be used if <c>Left</c> is already assigned.</exception>
-        public virtual IntNode Right {
-            get { return rightColumn; }
-            set {
-                if (Left == null)
-                    throw new InvalidOperationException(nameof(Right) + " can only be used if " + nameof(Left) + " is already assigned.");
-                if (value != null && value.Value < Left.Value)
-                    throw new ArgumentOutOfRangeException(nameof(Right) + " must have higher number than " + nameof(Left));
-                rightColumn = value;
-            }
-        }
-
+        public virtual IntNode Right { get; set; }
+        
         /// <summary>
         /// Gets or sets the node for the worksheet.
         /// </summary>
-        public SheetNode SheetName { get; set; }
+        public SheetNode Sheet { get; set; }
 
         /// <summary>
         /// Gets or sets the node for the workbook.
         /// </summary>
-        public BookNode BookName { get; set; }
-
+        public BookNode Book { get; set; }
+        
         /// <summary>
         /// Gets collection of child nodes.
         /// </summary>
         /// <remarks>Order will be: BookName, SheetName, Top, Left, Bottom, Right.</remarks>
-        public override IEnumerable<Node> Children {
+        public sealed override IEnumerable<Node> Children {
             get {
-                yield return BookName;
-                yield return SheetName;
-                yield return topRow;
-                yield return leftColumn;
-                yield return bottomRow;
-                yield return rightColumn;
+                yield return Book;
+                yield return Sheet;
+                yield return Top;
+                yield return Left;
+                yield return Bottom;
+                yield return Right;
             }
         }
+        #endregion
+
+        #region In-line setter methods
+
+        /// <summary>
+        /// Sets the coordinate nodes of this instance to the given nodes, then returns this node.
+        /// </summary>
+        /// <param name="top">New top row node.</param>
+        /// <param name="left">New left column node.</param>
+        /// <param name="bottom">New bottom row node.</param>
+        /// <param name="right">New right column node.</param>
+        /// <returns>Reference to this node.</returns>
+        public ReferenceNode SetCoordinates(IntNode top, IntNode left, IntNode bottom, IntNode right) {
+            this.Top = top;
+            this.Left = left;
+            if (bottom != null) this.Bottom = bottom;
+            if (right != null) this.Right = right;
+            return this;
+        }
+
+        /// <summary>
+        /// Sets the worksheet of this instance to the given sheet, then returns this node.
+        /// </summary>
+        /// <param name="sheet">New sheet node.</param>
+        /// <returns>Reference to this node.</returns>
+        public ReferenceNode SetSheet(SheetNode sheet) {
+            this.Sheet = sheet;
+            return this;
+        }
+
+        /// <summary>
+        /// Sets the worksheet of this instance to a new sheet node with the given name, then returns this node.
+        /// </summary>
+        /// <param name="name">Name of new sheet node.</param>
+        /// <returns>Reference to this node.</returns>
+        public ReferenceNode SetSheet(string name) {
+            this.Sheet = new SheetNode(name);
+            return this;
+        }
+
+        /// <summary>
+        /// Sets the workbook of this instance to the given workbook, then returns this node.
+        /// </summary>
+        /// <param name="book">New book node.</param>
+        /// <returns>References to this node.</returns>
+        public ReferenceNode SetBook(BookNode book) {
+            this.Book = book;
+            return this;
+        }
+
+        /// <summary>
+        /// Sets the workbook of this instance to a new book node with the given name, then returns this node.
+        /// </summary>
+        /// <param name="name">Name of new book node.</param>
+        /// <returns>References to this node.</returns>
+        public ReferenceNode SetBook(string name) {
+            this.Book = new BookNode(name);
+            return this;
+        }
+
+        #endregion
+
+        #region Rendering
+
+        /// <summary>
+        /// Gets the rendered formula.
+        /// </summary>
+        /// <remarks>
+        /// Result will be composed of <c>BookAndSheetPrefix</c>
+        /// followed by <c>Coordinates</c>.</remarks>
+        /// <param name="outline">Has no effect for reference nodes.</param>
+        /// <returns>Rendered formula.</returns>
+        public sealed override string Render(bool outline) => BookAndSheetPrefix + Coordinates;
 
         /// <summary>
         /// Gets a string representing the workbook and worksheet of this reference.
@@ -116,8 +151,8 @@ namespace Formulacrum.Nodes {
         /// </remarks>
         public string BookAndSheetPrefix {
             get {
-                var bn = BookName;
-                var sn = SheetName;
+                var bn = Book;
+                var sn = Sheet;
 
                 if (sn == null) { return ""; }
 
@@ -134,9 +169,17 @@ namespace Formulacrum.Nodes {
         /// <summary>
         /// Gets a string representing the row and column coordinates of this reference.
         /// </summary>
-        public string Coordinates => (topRow != null || leftColumn != null)
-            ? RenderCoordinates(topRow, leftColumn, bottomRow, rightColumn)
-            : "<null>";
+        public string Coordinates => Children.Skip(2).Any(n => n != null)
+            ? RenderCoordinates(Top, Left, Bottom, Right)
+            : Node.NullString;
+
+        #endregion
+
+        #endregion
+
+        #region Abstract Portion
+
+        //Clone
 
         /// <summary>
         /// Gets a string representing the given row and column coordinate nodes.
@@ -147,31 +190,8 @@ namespace Formulacrum.Nodes {
         /// <param name="right">The node representing the last column.</param>
         /// <returns>String representing the given row and column coordinates.</returns>
         protected abstract string RenderCoordinates(IntNode top, IntNode left, IntNode bottom, IntNode right);
-
-        /// <summary>
-        /// Gets the rendered formula.
-        /// </summary>
-        /// <remarks>
-        /// Result will be composed of <c>BookAndSheetPrefix</c>
-        /// followed by <c>Coordinates</c>.</remarks>
-        /// <param name="outline">Has no effect for reference nodes.</param>
-        /// <returns>Rendered formula.</returns>
-        public override string Render(bool outline) => BookAndSheetPrefix + Coordinates;
-
-        /// <summary>
-        /// Sets the coordinate nodes of this instance to the given nodes, then returns this node.
-        /// </summary>
-        /// <param name="top">New top row node.</param>
-        /// <param name="left">New left column node.</param>
-        /// <param name="bottom">New bottom row node.</param>
-        /// <param name="right">New right column node.</param>
-        /// <returns>Reference to this node.</returns>
-        public ReferenceNode SetCoordinates(IntNode top, IntNode left, IntNode bottom, IntNode right) {
-            this.Top = top;
-            this.Right = right;
-            this.Left = left;
-            this.Bottom = bottom;
-            return this;
-        }
+        
+        #endregion
     }
 }
+

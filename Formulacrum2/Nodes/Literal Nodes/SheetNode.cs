@@ -13,7 +13,7 @@ namespace Formulacrum.Nodes {
         /// <param name="sheetName">Worksheet name.</param>
         /// <exception cref="System.ArgumentException"><c>!IsValidSheetName(sheetName)</c></exception>
         public SheetNode(string sheetName)
-            : base(sheetName) {
+            : base(sheetName, "{0}") {
             if (!IsValidName(sheetName))
                 throw new ArgumentException("Invalid sheet name");
         }

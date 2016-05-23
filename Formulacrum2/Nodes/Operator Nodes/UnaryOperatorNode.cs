@@ -5,8 +5,6 @@
     /// </summary>
     public sealed class UnaryOperatorNode : OperatorNode {
 
-        private readonly bool isPrefix;
-
         /// <summary>
         /// Creates a new instance with the given properties.
         /// </summary>
@@ -16,14 +14,14 @@
         /// or after (<c>false</c>) argument.</param>
         public UnaryOperatorNode(string name, string symbol, bool isPrefix)
             : base(name, symbol, 1) {
-            this.isPrefix = isPrefix;
+            this.IsPrefix = isPrefix;
         }
 
         /// <summary>
         /// Gets a value indicating if symbol is rendered before (<c>true</c>)
         /// or after (<c>false</c>) argument.
         /// </summary>
-        public bool IsPrefix => isPrefix;
+        public bool IsPrefix { get; }
 
         /// <summary>
         /// Renders node as a formula, using given outline setting.
@@ -37,7 +35,7 @@
         public override string Render(bool outline) {
             var arg = Render(this[0], outline);
 
-            return isPrefix
+            return IsPrefix
                 ? Symbol + arg
                 : arg + Symbol;
         }
@@ -46,7 +44,7 @@
         /// Returns a new node with identical properties to this instance, but with no child nodes assigned.
         /// </summary>
         /// <returns>New node with identical properties to this instance, but with no child nodes assigned.</returns>
-        public override Node Clone() => new UnaryOperatorNode(Name, Symbol, isPrefix);
+        public override Node Clone() => new UnaryOperatorNode(Name, Symbol, IsPrefix);
 
         /// <summary>
         /// Sets argument to given value and returns this node.

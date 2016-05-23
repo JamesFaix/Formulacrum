@@ -90,7 +90,8 @@
     <Reference Include="System" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Nodes\CommonImplementation.cs" />
+    <Compile Include="NodeExtensions.cs" />
+    <Compile Include="Nodes\StringExt.cs" />
     <Compile Include="Factories\CommonImplementation.cs" />
     <Compile Include="Factories\Common.cs" />
     <Compile Include="Factories\ComparisonOperators.cs">
@@ -113,23 +114,23 @@
     <Compile Include="Factories\StatisticalFunctions.cs">
       <DependentUpon>Math.cs</DependentUpon>
     </Compile>
-    <Compile Include="Factories\TextFactory.cs" />
+    <Compile Include="Factories\Text.cs" />
     <Compile Include="Factories\TextFunctions.cs">
-      <DependentUpon>TextFactory.cs</DependentUpon>
+      <DependentUpon>Text.cs</DependentUpon>
     </Compile>
     <Compile Include="Factories\Groups.cs">
       <DependentUpon>Common.cs</DependentUpon>
     </Compile>
-    <Compile Include="Factories\AbsoluteRefs.cs" />
+    <Compile Include="Factories\A1References.cs" />
     <Compile Include="Factories\Operators.cs">
       <DependentUpon>Common.cs</DependentUpon>
     </Compile>
-    <Compile Include="Factories\RelativeRefs.cs" />
+    <Compile Include="Factories\R1C1References.cs" />
     <Compile Include="Factories\Literals.cs">
       <DependentUpon>Common.cs</DependentUpon>
     </Compile>
     <Compile Include="Factories\TextOperators.cs">
-      <DependentUpon>TextFactory.cs</DependentUpon>
+      <DependentUpon>Text.cs</DependentUpon>
     </Compile>
     <Compile Include="GlobalSuppressions.cs" />
     <Compile Include="Nodes\NodeExt.cs" />
@@ -146,14 +147,14 @@
     <Compile Include="Nodes\Operator Nodes\BinaryOperatorNode.cs" />
     <Compile Include="Nodes\Operator Nodes\OperatorNode.cs" />
     <Compile Include="Nodes\Operator Nodes\UnaryOperatorNode.cs" />
-    <Compile Include="Nodes\Reference Nodes\AbsoluteReferenceNode.cs" />
+    <Compile Include="Nodes\Reference Nodes\A1ReferenceNode.cs" />
     <Compile Include="Nodes\Reference Nodes\ReferenceNode.cs" />
-    <Compile Include="Nodes\Reference Nodes\RelativeReferenceNode.cs" />
+    <Compile Include="Nodes\Reference Nodes\R1C1ReferenceNode.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Nodes\NodeComposition.cd" />
-    <None Include="Nodes\NodeInheritance.cd" />
+    <None Include="Nodes\_NodeComposition.cd" />
+    <None Include="Nodes\_NodeInheritance.cd" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

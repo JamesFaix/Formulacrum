@@ -1,0 +1,9 @@
+C:\Users\James\Documents\GitHub\Formulacrum\Formulacrum.Test\obj\Debug\Formulacrum.Test.csprojResolveAssemblyReference.cache
+C:\Users\James\Documents\GitHub\Formulacrum\Formulacrum.Test\bin\Debug\Formulacrum.Test.dll
+C:\Users\James\Documents\GitHub\Formulacrum\Formulacrum.Test\bin\Debug\Formulacrum.Test.pdb
+C:\Users\James\Documents\GitHub\Formulacrum\Formulacrum.Test\bin\Debug\Formulacrum.dll
+C:\Users\James\Documents\GitHub\Formulacrum\Formulacrum.Test\bin\Debug\nunit.framework.dll
+C:\Users\James\Documents\GitHub\Formulacrum\Formulacrum.Test\bin\Debug\Formulacrum.pdb
+C:\Users\James\Documents\GitHub\Formulacrum\Formulacrum.Test\bin\Debug\nunit.framework.xml
+C:\Users\James\Documents\GitHub\Formulacrum\Formulacrum.Test\obj\Debug\Formulacrum.Test.dll
+C:\Users\James\Documents\GitHub\Formulacrum\Formulacrum.Test\obj\Debug\Formulacrum.Test.pdb

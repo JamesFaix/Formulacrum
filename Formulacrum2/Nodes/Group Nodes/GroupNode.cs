@@ -9,7 +9,7 @@ namespace Formulacrum.Nodes {
     /// </summary>
     public class GroupNode : Node {
 
-        private string indentSymbol = "\t";
+        private string indentSymbol = "    ";
         private readonly string openSymbol, closeSymbol;
         private readonly NodeCollection children;
 

@@ -2,7 +2,7 @@
 
 namespace Formulacrum {
 
-    partial class TextFactory {
+    partial class Text {
 
         #region Conversion
 
@@ -75,7 +75,7 @@ namespace Formulacrum {
         /// </summary>
         /// <returns>New node.</returns>
         /// <remarks><c>TEXT</c> returns a numeric code for the first character in a text string.</remarks>
-        public static FunctionNode Text() => new FunctionNode("TEXT", 2, 2);
+        public static FunctionNode TextFn() => new FunctionNode("TEXT", 2, 2);
 
         /// <summary>
         /// Returns a node representing the <c>TEXT</c> function, and assigns the given arguments.
@@ -84,7 +84,7 @@ namespace Formulacrum {
         /// <param name="format">Node representing format string.</param>
         /// <returns>New node.</returns>
         /// <remarks><c>TEXT</c> returns a numeric code for the first character in a text string.</remarks>
-        public static FunctionNode Text(Node value, Node format) => Text().SetValues(value, format);
+        public static FunctionNode TextFn(Node value, Node format) => TextFn().SetValues(value, format);
 
         /// <summary>
         /// Returns a node representing the <c>VALUE</c> function.
